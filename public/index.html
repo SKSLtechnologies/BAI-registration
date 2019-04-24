@@ -7,8 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- MATERIAL DESIGN ICONIC FONT -->
   <link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.css">
-  <!-- DATE-PICKER -->
-  <link rel="stylesheet" href="vendor/date-picker/css/datepicker.min.css">
   <!-- STYLE CSS -->
   <link rel="stylesheet" href="css/style.css">
 
@@ -49,11 +47,12 @@
           <input type="text" class="floating-label-field form-control floating-label-field--s3" id="email" placeholder="">
           <label for="email" class="floating-label">Email ID</label>
         </div>
-        <div class="form-holder">
-          <i class="zmdi zmdi-calendar"></i>
-          <input type="date" class="floating-label-field form-control floating-label-field--s3" id="date" placeholder="">
-          <label for="date" class="floating-label">Date</label>
-        </div>
+          <div class="form-holder">
+            <i class="zmdi zmdi-favorite"></i>
+            <input type="text" class="floating-label-field form-control floating-label-field--s3" id="website"
+              placeholder="">
+            <label for="website" class="floating-label">Website</label>
+          </div>
       </div>
       <div class="form-row-full">
         <div class="form-holder">
@@ -116,6 +115,30 @@
           <label for="dir-name" class="floating-label">Director's Name</label>
         </div>
       </div>
+      <div class="form-row">
+        <div class="form-holder">
+          <div class="custom-select">
+            <select class="floating-label-field floating-label-field--s3" id="org-type">
+              <option value="0">             -           </option>
+              <option value="1">Ltd.</option>
+              <option value="2">Pvt. Ltd.</option>
+              <option value="3">Partnership</option>
+              <option value="4">Others</option>
+            </select>
+            <label for="org-type" class="floating-label">Organization Type</label>
+          </div>
+        </div>
+        <div class="form-holder">
+          <div class="custom-select">
+            <select class="floating-label-field floating-label-field--s3" id="member">
+              <option value="0">           -             </option>
+              <option value="1">Yes</option>
+              <option value="2">No</option>
+            </select>
+            <label for="member" class="floating-label">Are you a member of BAI?</label>
+          </div>
+        </div>
+      </div>
       <h3 class="questions">Please select all the types of equipments:</h3>
       <div class="form-row">
         <label class="form-holder container">Excavators
@@ -160,38 +183,8 @@
         </label>
       </div>
 
-      <div class="form-row">
-        <div class="form-holder">
-          <div class="custom-select">
-            <select class="floating-label-field floating-label-field--s3" id="org-type">
-              <option value="0">             -           </option>
-              <option value="1">Ltd.</option>
-              <option value="2">Pvt. Ltd.</option>
-              <option value="3">Partnership</option>
-              <option value="4">Others</option>
-            </select>
-            <label for="org-type" class="floating-label">Organization Type</label>
-          </div>
-        </div>
-        <div class="form-holder">
-          <div class="custom-select">
-            <select class="floating-label-field floating-label-field--s3" id="member">
-              <option value="0">           -             </option>
-              <option value="1">Yes</option>
-              <option value="2">No</option>
-            </select>
-            <label for="member" class="floating-label">Are you a member of BAI?</label>
-          </div>
-        </div>
-      </div>
-      <div class="form-row-full">
-        <div class="form-holder">
-          <i class="zmdi zmdi-favorite"></i>
-          <input type="text" class="floating-label-field form-control floating-label-field--s3" id="website"
-            placeholder="">
-          <label for="website" class="floating-label">Website</label>
-        </div>
-      </div>
+      
+  
       <input type="button" name="previous" class="previous action-button" value="Previous" />
       <input type="button" name="next" class="next action-button" value="Next" />
     </fieldset>
