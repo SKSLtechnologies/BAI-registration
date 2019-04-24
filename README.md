@@ -13,4 +13,5 @@ BAI registration and table
     - Add validation
     - Add calendar
     - Add multi-select
+    - Add favicons
     
