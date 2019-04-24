@@ -2,15 +2,16 @@
 BAI registration and table
 
 
-#to-do
+### To do:
 1. For mobiles
-    Check background
-    Check transition
-    Check buttons on iPhone
-    Single Contract Value
+    - Check background
+    - Check transition
+    - Check buttons on iPhone
+    - Single Contract Value
 
 2. Front-end
-    Add validation
-    Add calendar
-    Add multi-select
+    - Add validation
+    - Add calendar
+    - Add multi-select
+    - Add favicons
     
