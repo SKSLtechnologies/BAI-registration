@@ -32,10 +32,10 @@ mongoose.connect(dbConfig.url, {
 });
 // define a simple route
 app.get('/home', (req, res) => {
-    res.json({"message": "Welcome to EasyNotes application. Take notes quickly. Organize and keep track of all your notes."});
+    res.json({"message": "Heroku wuhoo!"});
 });
 
-require('./app/routes/note.routes.js')(app);
+require('./app/routes/bai.routes.js')(app);
 
 // listen for requests
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
