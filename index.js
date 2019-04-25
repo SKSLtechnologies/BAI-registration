@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors')
 const path = require('path');
 const dbConfig = require('./config/database.config.js');
 const mongoose = require('mongoose');
@@ -14,6 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 // parse requests of content-type - application/json
 app.use(bodyParser.json())
+app.use(cors())
 
 app.get('/',function(req,res){
   res.sendFile(path.join( __dirname+'/public/index.html'));
