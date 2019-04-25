@@ -32,7 +32,7 @@ mongoose.connect(dbConfig.url, {
 });
 // define a simple route
 app.get('/home', (req, res) => {
-    res.json({"message": "Heroku wuhoo!"});
+    res.json({"message": "Submitted"});
 });
 
 require('./app/routes/bai.routes.js')(app);

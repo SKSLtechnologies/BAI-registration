@@ -39,7 +39,8 @@ exports.create = (req, res) => {
     // Save member in the database
     info.save()
     .then(data => {
-        res.send(data);
+        // console.log(data)
+        res.redirect('/home')
     }).catch(err => {
         res.status(500).send({
             message: err.message || "Some error occurred while creating the member."

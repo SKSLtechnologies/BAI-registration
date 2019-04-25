@@ -52,7 +52,7 @@ const BAIinfo = mongoose.Schema({
         type: String,
     },
     member: {
-        type: Boolean,
+        type: String,
         required: [true, "can't be blank"],
     },
     website: {
