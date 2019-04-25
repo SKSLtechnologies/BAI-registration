@@ -75,9 +75,8 @@ const BAIinfo = mongoose.Schema({
         type: Number,
     },
     work_nature: [String],
-    updated: {
-        type: Date,
-        default: Date.now 
+    credentials: {
+        type: String,
     },
 }, {
     timestamps: true

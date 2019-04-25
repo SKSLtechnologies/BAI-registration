@@ -1,14 +1,14 @@
-const BAIinfo = require('../models/note.model.js');
+const BAIinfo = require('../models/bai.model.js');
 
-// Create and Save a new Note
+// Create and Save a new member
 exports.create = (req, res) => {
     if(!req.body) {
         return res.status(400).send({
-            message: "Note can not be empty"
+            message: "member can not be empty"
         });
     }
 
-    // Create a Note
+    // Create a member
     const info = new BAIinfo({
         name: req.body.name, 
         org_name: req.body.org_name,
@@ -17,7 +17,7 @@ exports.create = (req, res) => {
         city: req.body.city,
         state: req.body.state,
         pin: req.body.pin,
-        phone: req.body.phone || "",
+        phone: req.body.phone || "N/A",
         office: req.body.office, 
         md_name: req.body.md_name || "N/A", 
         partner_name: req.body.partner_name || "N/A", 
@@ -32,27 +32,28 @@ exports.create = (req, res) => {
         one_year: req.body.one_year || 0,
         two_year: req.body.two_year || 0,
         three_year: req.body.three_year || 0,  
-        work_nature: req.body.work_nature
+        work_nature: req.body.work_nature,
+        credentials: req.body.credentials || "N/A"
     });
 
-    // Save Note in the database
+    // Save member in the database
     info.save()
     .then(data => {
         res.send(data);
     }).catch(err => {
         res.status(500).send({
-            message: err.message || "Some error occurred while creating the Note."
+            message: err.message || "Some error occurred while creating the member."
         });
     });
 };
 
 exports.findAll = (req, res) => {
     BAIinfo.find()
-    .then(notes => {
-        res.send(notes);
+    .then(members => {
+        res.send(members);
     }).catch(err => {
         res.status(500).send({
-            message: err.message || "Some error occurred while retrieving notes."
+            message: err.message || "Some error occurred while retrieving members."
         });
     });
 };

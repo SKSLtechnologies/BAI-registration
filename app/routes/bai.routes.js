@@ -1,9 +1,9 @@
 module.exports = (app) => {
-    const BAIinfo = require('../controllers/note.controller.js');
+    const BAIinfo = require('../controllers/bai.controller.js');
 
-    // Create a new Note
-    app.post('/notes', BAIinfo.create);
-
-    app.get('/notes', BAIinfo.findAll);
+    // Create a new member
+    app.post('/new', BAIinfo.create);
+    //View all members
+    app.get('/members', BAIinfo.findAll);
 
 }
