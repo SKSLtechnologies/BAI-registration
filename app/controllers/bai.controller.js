@@ -51,7 +51,7 @@ exports.create = (req, res) => {
 exports.findAll = (req, res) => {
     BAIinfo.find()
     .then(members => {
-        res.send(members);
+        res.json(members);
     }).catch(err => {
         res.status(500).send({
             message: err.message || "Some error occurred while retrieving members."

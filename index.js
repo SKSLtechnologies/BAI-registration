@@ -35,6 +35,14 @@ app.get('/home', (req, res) => {
     res.json({"message": "Submitted"});
 });
 
+app.get('/main', function(req, res) {
+
+    var name = 'hello';
+  
+    res.render(__dirname + "/public/table.html", {name:name});
+  
+  });
+
 require('./app/routes/bai.routes.js')(app);
 
 // listen for requests
