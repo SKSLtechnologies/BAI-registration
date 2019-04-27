@@ -11,14 +11,16 @@ var app = express()
 app.use(express.static(path.join(__dirname, 'public')))
 
 // parse requests of content-type - application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.urlencoded({
+    extended: true
+}))
 
 // parse requests of content-type - application/json
 app.use(bodyParser.json())
 app.use(cors())
 
-app.get('/',function(req,res){
-  res.sendFile(path.join( __dirname+'/public/index.html'));
+app.get('/', function (req, res) {
+    res.sendFile(path.join(__dirname + '/public/index.html'));
 });
 
 mongoose.Promise = global.Promise;
@@ -27,26 +29,21 @@ mongoose.Promise = global.Promise;
 mongoose.connect(dbConfig.url, {
     useNewUrlParser: true
 }).then(() => {
-    console.log("Successfully connected to the database");    
+    console.log("Successfully connected to the database");
 }).catch(err => {
     console.log('Could not connect to the database. Exiting now...', err);
     process.exit();
 });
 // define a simple route
-app.get('/home', (req, res) => {
-    res.json({"message": "Submitted"});
+// app.get('/home', (req, res) => {
+//     res.json({"message": "Submitted"});
+// });
+
+app.get('/home', function (req, res) {
+    res.sendFile(path.join(__dirname + '/public/table.html'));
 });
-
-app.get('/main', function(req, res) {
-
-    var name = 'hello';
-  
-    res.render(__dirname + "/public/table.html", {name:name});
-  
-  });
 
 require('./app/routes/bai.routes.js')(app);
 
 // listen for requests
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
-
