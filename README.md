@@ -11,6 +11,7 @@ BAI registration and table
 
 2. Front-end
     - Form
+        - Add autofocus 
         - Add inline validation
         - Add multi-select (clients)
         - Grid select + check (equipments)
