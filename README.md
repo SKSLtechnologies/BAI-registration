@@ -21,6 +21,7 @@ BAI registration and table
         - Mandatory Fields
         - "Directors' Names"
         - Add input tel for phone/mobile - https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/tel
+        - Once submitted, a modal pops for success of submission - "You have been successfully registered"
     - Homepage 
         - Split screen for Registration and Member List - https://codepen.io/facundocorradini/pen/PEKBGy
     - Member List - https://codepen.io/azamatms/full/ZGwOMM
