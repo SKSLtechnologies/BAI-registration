@@ -4,12 +4,74 @@ var current_fs, next_fs, previous_fs; //fieldsets
 var left, opacity, scale; //fieldset properties which we will animate
 var animating; //flag to prevent quick multi-click glitches
 
+$(function() {
+    // Initialize Select2 multiselect box
+			$("select[name=\"validation-select2-multi\"]").select2({
+				placeholder: "Contract Type",
+			}).change(function() {
+				$(this).valid();
+			});
+    
+   
+    // Initialize validation
+			$("#validation-form").validate({
+				ignore: ".ignore, .select2-input",
+				focusInvalid: false,
+				rules: {
+				
+          "validation-select2-multi": {
+						required: true,
+					}
+      }
+   });          
+});
+
+
+
+
 $(".next").click(function(){
 	if(animating) return false;
 	animating = true;
 	
 	current_fs = $(this).parent();
-	next_fs = $(this).parent().next();
+  next_fs = $(this).parent().next();
+ 
+  // Validation
+  // var form = $("#msform");
+  // form.validate({
+  //   errorElement: 'span',
+  //   errorClass: 'help-block',
+  //   highlight: function(element, errorClass, validClass) {
+  //     $(element).closest('.form-holder').addClass("has-error");
+  //   },
+  //   unhighlight: function(element, errorClass, validClass) {
+  //     $(element).closest('.form-holder').removeClass("has-error");
+  //   },
+  //   rules: {
+  //     contractor: {
+  //       required: true,
+  //       // usernameRegex: true,
+  //       minlength: 6,
+  //     },						
+  //   },
+  //   messages: {
+  //     contractor: {
+  //       required: "Username required",
+  //     },
+  //   }
+  // });
+  // if (form.valid() === true){
+  //   if ($('#pg1').is(":visible")){
+  //     current_fs = $('#pg1');
+  //     next_fs = $('#pg2');
+  //   }else if($('#pg2').is(":visible")){
+  //     current_fs = $('#pg2');
+  //     next_fs = $('#pg3');
+  //   }
+    
+  //   next_fs.show(); 
+  //   current_fs.hide();
+  // }
 	
 	//activate next step on progressbar using the index of next_fs
 	$("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
@@ -39,7 +101,9 @@ $(".next").click(function(){
 		}, 
 		//this comes from the custom easing plugin
 		easing: 'easeInQuad'
-	});
+  });
+  
+
 });
 
 $(".previous").click(function(){
@@ -155,3 +219,60 @@ function closeAllSelect(elmnt) {
 /* If the user clicks anywhere outside the select box,
 then close all select boxes: */
 document.addEventListener("click", closeAllSelect);
+
+
+
+
+//Validation
+/*
+$(document).ready(function(){
+    	// Custom method to validate username
+      $.validator.addMethod("usernameRegex", function(value, element) {
+        return this.optional(element) || /^[a-zA-Z0-9]*$/i.test(value);
+        }, "Username must contain only letters, numbers");
+      
+        // Form validation
+        var form = $("#msform");
+        form.validate({
+          errorElement: 'span',
+          errorClass: 'help-block',
+          highlight: function(element, errorClass, validClass) {
+            $(element).closest('.form-control').addClass("has-error");
+          },
+          unhighlight: function(element, errorClass, validClass) {
+            $(element).closest('.form-control').removeClass("has-error");
+          },
+          rules: {
+            contractor: {
+              required: true,
+              usernameRegex: true,
+              minlength: 6,
+            },
+            org : {
+              required: true,
+              minlength: 4,
+            },         
+          },
+          messages: {
+            contractor: {
+              required: "Contractor name required",
+            },
+            org : {
+              required: "Organization name required",
+            },
+          }
+        });
+        if (form.valid() === true){
+          if ($('#pg1').is(":visible")){
+            current_fs = $('#pg1');
+            next_fs = $('#pg2');
+          }else if($('#pg2').is(":visible")){
+            current_fs = $('#pg2');
+            next_fs = $('#personal_information');
+          }
+          
+          next_fs.show(); 
+          current_fs.hide();
+        }
+});
+*/
