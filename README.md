@@ -17,10 +17,10 @@ BAI registration and table
         - Grid select + check (equipments)
         - Add favicons
         - Add GST, Aadhar ID, etc.
-        - Add select for states
+        - Add select for states :boar:
         - Clean out HTML/CSS
         - Mandatory Fields
-        - "Directors' Names"
+        - "Directors' Names" :frog:
         - Add input tel for phone/mobile - https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/tel
         - Once submitted, a modal pops for success of submission - "You have been successfully registered"
     - Homepage 
