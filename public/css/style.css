@@ -305,7 +305,6 @@ body {
 
 /* Hide the browser's default checkbox */
 .container input {
-	position: absolute;
 	opacity: 0;
 	cursor: pointer;
 	height: 0;
@@ -315,7 +314,6 @@ body {
 
 /* Create a custom checkbox */
 .checkmark {
-	position: absolute;
 	top: 0;
 	left: 0;
 	height: 25px;
@@ -341,7 +339,6 @@ body {
 /* Create the checkmark/indicator (hidden when not checked) */
 .checkmark:after {
 	content: "";
-	position: absolute;
 	display: none;
 }
 
@@ -520,7 +517,6 @@ body {
 		background: black;
 		height: auto;
 		display: block;
-		width: 500px;
 	}
 
 	#msform {
