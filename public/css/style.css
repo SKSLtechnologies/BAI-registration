@@ -376,7 +376,7 @@ body {
 
 @media (max-width: 767px) {
 	html {
-		background: black;
+		background: #02241b;
 		height: auto;
 		display: block;
 	}
