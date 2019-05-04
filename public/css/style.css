@@ -25,10 +25,6 @@ html {
 	background-size: repeat;
 }
 
-/* body {
-	font-family: montserrat, arial, verdana;
-} */
-
 body {
 	font-family: "Lato-Regular";
 	font-size: 14px;
@@ -95,9 +91,22 @@ body {
 
 }
 
+#msform .previous {
+	width: 100px;
+	background: rgba(255, 166, 0, 0.747);
+	color: white;
+	border: 0 none;
+	border-radius: 1px;
+	cursor: pointer;
+	padding: 10px 5px;
+	margin: 10px 5px;
+	font-family: "Lato-bold";
+	font-size: 14px;
+}
+
 #msform .action-button:hover,
 #msform .action-button:focus {
-	box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+	box-shadow: 0 0 0 2px white, 0 0 0 3px rgb(58, 58, 58);
 }
 
 /*headings*/
@@ -319,7 +328,7 @@ body {
 }
 
 .container:hover {
-	background-color: bisque;
+	background-color: rgba(255, 166, 0, 0.459);;
 	color: #666;
 }
 
@@ -511,6 +520,7 @@ body {
 		background: black;
 		height: auto;
 		display: block;
+		width: auto;
 	}
 
 	#msform {
