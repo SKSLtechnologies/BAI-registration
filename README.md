@@ -11,7 +11,7 @@ BAI registration and table
 
 2. Front-end
     - Form
-        - Add autofocus 
+        - Add autofocus :monkey:
         - Add inline validation
         - Add multi-select (clients)
         - Grid select + check (equipments)
