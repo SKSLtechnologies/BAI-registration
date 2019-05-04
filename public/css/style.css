@@ -519,6 +519,21 @@ body {
 		height: auto;
 	}
 
+	#msform .action-button {
+		width: 100px;
+		background: #27AE60;
+		color: white;
+		border: 0 none;
+		border-radius: 1px;
+		cursor: pointer;
+		padding: 10px 5px;
+		margin: 10px 5px;
+		font-family: "Lato-bold";
+		font-size: 14px;
+	}
+	
+	
+
 	.form-row {
 		display: block;
 	}
