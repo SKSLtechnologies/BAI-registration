@@ -389,7 +389,7 @@ body {
 
 	#msform input {
 		height: 60px;
-		padding: 2px;
+		padding-top: 20px;
 	}
 	.form-row {
 		display: block;
