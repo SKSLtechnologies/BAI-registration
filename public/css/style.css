@@ -290,7 +290,7 @@ body {
 }
 
 .container {
-	display: block;
+	/* display: block; */
 	position: relative;
 	height: 25px;
 	background-color: none;
