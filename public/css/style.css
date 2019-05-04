@@ -387,8 +387,8 @@ body {
 		height: auto;
 	}
 
-	#msform input {
-		padding-top: 40px;
+	.huge-label {
+		padding: top 40;
 	}
 	.form-row {
 		display: block;
