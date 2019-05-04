@@ -4,10 +4,10 @@ BAI registration and table
 
 ### To do:
 1. For mobiles
-    - Check background
-    - Check transition
-    - Check buttons on iPhone
-    - Single Contract Value
+    - Check background :poop:
+    - Check transition :poop:
+    - Check buttons on iPhone :poop:
+    - Single Contract Value :poop:
 
 2. Front-end
     - Form
