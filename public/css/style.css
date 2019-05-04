@@ -21,7 +21,7 @@
 
 html {
 	height: auto;
-	background-image:linear-gradient(to bottom, rgba(0,0,0,0.36) 100%, transparent), url(../images/background.jpg);
+	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.36) 100%, transparent), url(../images/background.jpg);
 	background-size: repeat;
 }
 
@@ -46,6 +46,7 @@ body {
 
 }
 
+/*container*/
 #msform fieldset {
 	background: white;
 	border: 0 none;
@@ -55,7 +56,6 @@ body {
 	box-sizing: border-box;
 	width: 80%;
 	margin: 0 10%;
-	/*stacking fieldsets above each other*/
 	position: relative;
 }
 
@@ -92,16 +92,7 @@ body {
 }
 
 #msform .previous {
-	width: 100px;
 	background: rgba(255, 166, 0, 0.747);
-	color: white;
-	border: 0 none;
-	border-radius: 1px;
-	cursor: pointer;
-	padding: 10px 5px;
-	margin: 10px 5px;
-	font-family: "Lato-bold";
-	font-size: 14px;
 }
 
 #msform .action-button:hover,
@@ -118,7 +109,6 @@ body {
 	text-align: center;
 	font-weight: 900;
 	letter-spacing: 2px;
-	font-weight: 900;
 	margin-bottom: 10px;
 }
 
@@ -207,18 +197,6 @@ body {
 	margin-right: 0;
 }
 
-.form-row .form-holder.w-100 {
-	width: 100%;
-	margin-right: 0;
-}
-
-.form-row .form-holder {
-	margin-right: 21px;
-}
-
-.form-row .form-holder:last-child {
-	margin-right: 0;
-}
 
 .form-row-full {
 	display: flex;
@@ -234,18 +212,7 @@ body {
 	margin-right: 0;
 }
 
-.form-row-full .form-holder.w-100 {
-	width: 100%;
-	margin-right: 0;
-}
 
-.form-row-full .form-holder {
-	margin-right: 21px;
-}
-
-.form-row-full .form-holder:last-child {
-	margin-right: 0;
-}
 
 .form-holder {
 	position: relative;
@@ -257,36 +224,6 @@ body {
 	transform: translateY(-50%);
 	right: 20px;
 	font-size: 16px;
-}
-
-.form-control {
-	height: 42px;
-	border: 1px solid #e6e6e6;
-	width: 100%;
-	background: none;
-	padding: 0 35px 0 19px;
-	color: #999;
-}
-
-
-.form-control:focus {
-	border-color: #8eb852;
-}
-
-.form-control::-webkit-input-placeholder {
-	color: #999;
-}
-
-.form-control::-moz-placeholder {
-	color: #999;
-}
-
-.form-control:-ms-input-placeholder {
-	color: #999;
-}
-
-.form-control:-moz-placeholder {
-	color: #999;
 }
 
 .container {
@@ -328,11 +265,12 @@ body {
 }
 
 .container:hover {
-	background-color: rgba(255, 166, 0, 0.459);;
+	background-color: rgba(255, 166, 0, 0.459);
+	;
 	color: #666;
 }
 
-/* When the checkbox is checked, add a blue background */
+/* When the checkbox is checked, add a orange background */
 .container input:checked~.checkmark {
 	background-color: orange;
 }
@@ -415,103 +353,24 @@ body {
 }
 
 
-/* Making the label break the flow */
-.floating-label
-{
-    position: absolute;
-    top: 0;
-    left: 0;
-    user-select: none;
-     z-index: 1;
+.floating-label-field--s3+.floating-label {
+	position: absolute;
+	top: .75em;
+	left: .75em;
+	display: inline-block;
+	width: auto;
+	margin: 0;
+	padding: .75em;
+	color: rgb(161, 159, 159);
 }
 
-/* Hide the browser-specific focus styles */
-.floating-label-field
-{
-    color: rgba(44, 62, 80, .75); 
-    border-width: 0;
-    z-index: 1;
-}
-.floating-label-field:focus
-{
-    outline: 0;
-    box-shadow: 0;
-}
-
-.floating-label,
-.floating-label-field
-{
-    font: inherit;
-    line-height: 1; 
-
-    display: block;
-
-    width: 100%;
-}
-
-.floating-label-field,
-.floating-label-wrap
-{
-    position: relative;
-}
-
-/* Input Style #1 */
-
-
-.floating-label-field--s3
-{
-    padding: 1.5em; 
-
-    transition: border-color .25s ease-in-out;
-
-    color: rgb(78, 78, 78);
-    border: 1px solid rgba(255, 255, 255, .1);
-    border-radius: 5px;
-    background-color: transparent;
-}
-.floating-label-field--s3 + .floating-label
-{
-    position: absolute;
-    top: .75em;
-    left: .75em;
-
-    display: inline-block;
-
-    width: auto;
-    margin: 0;
-    padding: .75em;
-
-    transition: transform .25s, opacity .25s, padding .25s ease-in-out;
-    transform-origin: 0 0;
-
-    color: rgb(161, 159, 159);
-}
-.floating-label-field--s3:focus,
-.floating-label-field--s3:not(:placeholder-shown)
-{
-    border-color: black;
-}
-.floating-label-field--s3:focus + .floating-label,
-.floating-label-field--s3:not(:placeholder-shown) + .floating-label
-{
-    z-index: 1;
-    padding: .75em;
-    transform: translate(0, -2em) scale(.9);
-    color: black;
-    background-color: white;
-}
-
-/* Common Styles */
-/* Identical inputs on all browsers */
-.floating-label-field--s3:not(textarea)
-{
-    max-height: 4em;
-}
-
-
-.floating-label-field--s3::placeholder
-{
-    color: transparent;
+.floating-label-field--s3:focus+.floating-label,
+.floating-label-field--s3:not(:placeholder-shown)+.floating-label {
+	z-index: 1;
+	padding: .75em;
+	transform: translate(0, -2em) scale(.9);
+	color: black;
+	background-color: white;
 }
 
 
@@ -527,8 +386,10 @@ body {
 		padding: 0;
 		height: auto;
 	}
-	
 
+	#msform input {
+		height: 60px;
+	}
 	.form-row {
 		display: block;
 	}
@@ -550,6 +411,4 @@ body {
 		height: 25px;
 		text-align: center;
 	}
-
-
 }
