@@ -78,7 +78,7 @@ $(".previous").click(function(){
 });
 
 $(".submit").click(function(){
-	return false;
+	alert("Thank you for submitting the form!")
 })
 
 var x, i, j, selElmnt, a, b, c;

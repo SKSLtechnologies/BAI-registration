@@ -40,7 +40,7 @@ mongoose.connect(dbConfig.url, {
 // });
 
 app.get('/home', function (req, res) {
-    res.sendFile(path.join(__dirname + '/public/table.html'));
+    res.sendFile(path.join(__dirname + '/public/success.html'));
 });
 
 require('./app/routes/bai.routes.js')(app);

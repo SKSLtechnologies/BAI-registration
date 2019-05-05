@@ -4,39 +4,32 @@ mongoose.set('useCreateIndex', true);
 const BAIinfo = mongoose.Schema({
     name: {
         type: String,
-        required: [true, "can't be blank"],
+        // required: [true, "can't be blank"],
     },
     org_name: {
         type: String,
-        // required: [true, "can't be blank"],
     },
     email: {
         type: String,
-        // required: [true, "can't be blank"],
-        // match: [/\S+@\S+\.\S+/, 'is invalid'],
     },
     address: {
         type: String,
-        // required: [true, "can't be blank"],
     },
     city: {
         type: String,
-        // required: [true, "can't be blank"],
     },
     state: {
         type: String,
-        required: [true, "can't be blank"],
+        // required: [true, "can't be blank"],
     },
     pin: {
         type: String,
-        // required: [true, "can't be blank"],
     },
     phone: {
-        type: Number,
+        type: String,
     },
     office: {
-        type: Number,
-        // required: [true, "can't be blank"],
+        type: String,
     },
     md_name: {
         type: String,
@@ -53,7 +46,6 @@ const BAIinfo = mongoose.Schema({
     },
     member: {
         type: String,
-        // required: [true, "can't be blank"],
     },
     website: {
         type: String,
