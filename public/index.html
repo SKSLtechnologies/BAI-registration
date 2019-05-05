@@ -123,14 +123,14 @@
           </div>
         </div>
         <div class="form-holder">
-          <!-- <div class="custom-select"> -->
-            <select id="member" name="member">
-              <option value="0">Are you a member of BAI?</option>
+          <div class="custom-select">
+            <select class="floating-label-field floating-label-field--s3" id="member" name="member">
+              <option value="0"> - </option>
               <option value="Yes">Yes</option>
               <option value="No">No</option>
             </select>
-            <!-- <label for="member" class="floating-label">Are you a member of BAI?</label> -->
-          <!-- </div> -->
+            <label for="member" class="floating-label">Are you a member of BAI?</label>
+          </div>
         </div>
       </div>
       <h3 class="questions">Please select all the types of equipments:</h3>
@@ -187,7 +187,7 @@
       <div class="form-row">
         <div class="form-holder">
           <div class="custom-select">
-            <select class="floating-label-field floating-label-field--s3" id="clients" name="clients">
+            <select class="floating-label-field--s3" id="clients" name="clients">
               <option value="0"> - </option>
               <option value="CIL">CIL</option>
               <option value="NTPC">NTPC</option>
@@ -222,7 +222,7 @@
           <i class="zmdi zmdi-money"></i>
           <input type="text" class="floating-label-field--s3" id="largest-contract" name="largest_contract"
             placeholder="">
-          <label for="largest-contract" class="floating-label">Largest Contract - last 5 years</label>
+          <label for="largest-contract" class="floating-label">Single Largest Contract in the last 5 years (Rs.)</label>
         </div>
       </div>
       <h3 class="questions">Yearly turnover for the last 3 years:</h3>
