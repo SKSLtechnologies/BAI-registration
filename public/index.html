@@ -24,67 +24,87 @@
       <li>Project Details</li>
     </ul>
     <!-- fieldsets -->
-    <fieldset>
+
+    <fieldset id="fortheloveoflabels">
       <h2 class="fs-title">Basic Details</h2>
       <h3 class="fs-subtitle">This is step 1</h3>
+      <!-- <ul>
+          <li>
+            <label for="name">Name</label>
+            <input type="text" name="name" maxlength="100">
+          </li>
+          <li>
+            <label for="email">Email</label>
+            <input type="email" name="email" maxlength="100">
+          </li>
+        <li>
+          <label for="url">Website</label>
+          <input type="url" name="url" maxlength="100">
+        </li>
+        <li>
+          <input type="submit" value="Send This">
+        </li>
+      </ul>
+       <h2 class="fs-title">Basic Details</h2>
+      <h3 class="fs-subtitle">This is step 1</h3> -->
       <div class="form-row">
         <div class="form-holder">
           <i class="zmdi zmdi-account"></i>
-          <input type="text" class=" floating-label-field--s3" id="contractor-name" name="name" placeholder="">
-          <label for="contractor-name" class="floating-label">Contractor's Name</label>
+          <label for="name">Contact Person</label>
+          <input type="text" id="contractor-name" name="name" placeholder="">
         </div>
         <div class="form-holder">
+          <label for="org-name">Organization's Name</label>
           <i class="zmdi zmdi-account"></i>
-          <input type="text" class="floating-label-field--s3" id="org-name" name="org_name" placeholder="">
-          <label for="org-name" class="floating-label">Organization's Name</label>
+          <input type="text" id="org-name" name="org_name" placeholder="">
         </div>
       </div>
       <div class="form-row">
         <div class="form-holder">
+          <label for="email">Email ID</label>
           <i class="zmdi zmdi-email"></i>
-          <input type="text" class=" floating-label-field--s3" id="email" name="email" placeholder="">
-          <label for="email" class="floating-label">Email ID</label>
+          <input type="text" id="email" name="email" placeholder="">
         </div>
         <div class="form-holder">
+          <label for="website">Website</label>
           <i class="zmdi zmdi-favorite"></i>
-          <input type="text" class=" floating-label-field--s3" id="website" name="website" placeholder="">
-          <label for="website" class="floating-label">Website</label>
+          <input type="text" id="website" name="website" placeholder="">
         </div>
       </div>
       <div class="form-row-full">
         <div class="form-holder">
+          <label for="address">Address</label>
           <i class="zmdi zmdi-map"></i>
-          <input type="text" class=" floating-label-field--s3" id="address" name="address" placeholder="">
-          <label for="address" class="floating-label">Address</label>
+          <input type="text" id="address" name="address" placeholder="">
         </div>
       </div>
       <div class="form-row">
         <div class="form-holder">
+          <label for="city">City</label>
           <i class="zmdi zmdi-pin"></i>
-          <input type="text" class=" floating-label-field--s3" id="city" name="city" placeholder="">
-          <label for="city" class="floating-label">City</label>
+          <input type="text" id="city" name="city" placeholder="">
         </div>
         <div class="form-holder">
+          <label for="state">State</label>
           <i class="zmdi zmdi-pin"></i>
-          <input type="text" class=" floating-label-field--s3" id="state" name="state" placeholder="">
-          <label for="state" class="floating-label">State</label>
+          <input type="text" id="state" name="state" placeholder="">
         </div>
         <div class="form-holder">
+          <label for="pin-code">Pin Code</label>
           <i class="zmdi zmdi-pin"></i>
-          <input type="text" class=" floating-label-field--s3" id="pin-code" name="pin" placeholder="">
-          <label for="pin-code" class="floating-label">Pin Code</label>
+          <input type="text" id="pin-code" name="pin" placeholder="">
         </div>
       </div>
       <div class="form-row">
         <div class="form-holder">
+          <label for="phone">Phone Number</label>
           <i class="zmdi zmdi-smartphone-android"></i>
-          <input type="text" class=" floating-label-field--s3" name="phone" id="phone" placeholder="">
-          <label for="phone" class="floating-label">Phone Number</label>
+          <input type="text" name="phone" id="phone" placeholder="">
         </div>
         <div class="form-holder">
+          <label for="office">Office Number</label>
           <i class="zmdi zmdi-phone"></i>
-          <input type="text" class=" floating-label-field--s3" id="office" name="office" placeholder="">
-          <label for="office" class="floating-label">Office Number</label>
+          <input type="text" id="office" name="office" placeholder="">
         </div>
       </div>
       <button type="button" name="next" class="next action-button">Next</button>
@@ -94,46 +114,52 @@
       <h3 class="fs-subtitle">This is Step 2</h3>
       <div class="form-row">
         <div class="form-holder">
+          <label for="md-name">MD's Name</label>
           <i class="zmdi zmdi-account"></i>
-          <input type="text" class=" floating-label-field--s3" id="md-name" name="md_name" placeholder="">
-          <label for="md-name" class="floating-label">MD's Name</label>
+          <input type="text" id="md-name" name="md_name" placeholder="">
         </div>
         <div class="form-holder">
+          <label for="dir-name">Directors' Name</label>
           <i class="zmdi zmdi-account"></i>
-          <input type="text" class=" floating-label-field--s3" id="part-name" name="partner_name" placeholder="">
-          <label for="part-name" class="floating-label">Partner's Name</label>
-        </div>
-        <div class="form-holder">
-          <i class="zmdi zmdi-account"></i>
-          <input type="text" class=" floating-label-field--s3" id="dir-name" name="director_name">
-          <label for="dir-name" class="floating-label">Directors' Name</label>
+          <input type="text" id="dir-name" name="director_name">
         </div>
       </div>
       <div class="form-row">
         <div class="form-holder">
+         <label for="part-name">Partner's Name</label>            <i class="zmdi zmdi-account"></i>
+         <input type="text" id="part-name" name="partner_name" placeholder="">
+        </div>
+        <div class="form-holder">
+         <label for="prop-name">Proprietor's Name</label>            <i class="zmdi zmdi-account"></i>
+         <input type="text" id="prop-name" name="prop_name" placeholder="">
+       </div>
+      </div>
+      <div class="form-row">
+        <div class="form-holder">   
+          <label for="org-type">Organization Type</label>         
           <div class="custom-select">
-            <select class="floating-label-field floating-label-field--s3" id="org-type" name="org_type">
+   
+            <select id="org-type" name="org_type">
               <option value="0"> - </option>
               <option value="Ltd.">Ltd.</option>
               <option value="Pvt. Ltd.">Pvt. Ltd.</option>
               <option value="Partnership">Partnership</option>
               <option value="Others">Others</option>
             </select>
-            <label for="org-type" class="floating-label">Organization Type</label>
           </div>
         </div>
         <div class="form-holder">
           <div class="custom-select">
-            <select class="floating-label-field floating-label-field--s3" id="member" name="member">
+            <label for="org-type">Are you a BAI member?</label>
+            <select id="member" name="member">
               <option value="0"> - </option>
               <option value="Yes">Yes</option>
               <option value="No">No</option>
             </select>
-            <label for="member" class="floating-label">Are you a member of BAI?</label>
           </div>
         </div>
       </div>
-      <h3 class="questions">Please select all the types of equipments:</h3>
+      <h3 class="questions">Please select all the types of equipments you are using:</h3>
       <div class="form-row">
         <label class="form-holder container">Excavators
           <input type="checkbox" name="equipments" value="Excavators">
@@ -187,7 +213,8 @@
       <div class="form-row">
         <div class="form-holder">
           <div class="custom-select">
-            <select class="floating-label-field--s3" id="clients" name="clients">
+              <label for="clients">Clients</label>
+            <select id="clients" name="clients">
               <option value="0"> - </option>
               <option value="CIL">CIL</option>
               <option value="NTPC">NTPC</option>
@@ -203,41 +230,39 @@
               <option value="Private">Private</option>
               <option value="Others">Others</option>
             </select>
-            <label for="clients" class="floating-label">Name of the Clients</label>
           </div>
         </div>
         <div class="form-holder">
           <div class="custom-select">
+            <label for="contract">Contract type</label>
             <select class="floating-label-field floating-label-field--s3" id="contract" name="contract_type">
               <option value="0"> - </option>
               <option value="EPC Contract">EPC Contract</option>
               <option value="Lumpsum Contract">Lumpsum Contract</option>
             </select>
-            <label for="contract" class="floating-label">Contract Type</label>
           </div>
         </div>
       </div>
       <div class="form-row-full">
         <div class="form-holder">
+          <label for="largest-contract">Single Largest Contract in the last 5 years (Rs.)</label>
           <i class="zmdi zmdi-money"></i>
-          <input type="text" class="floating-label-field--s3" id="largest-contract" name="largest_contract"
-            placeholder="">
-          <label for="largest-contract" class="floating-label">Single Largest Contract in the last 5 years (Rs.)</label>
+          <input type="text" id="largest-contract" name="largest_contract" placeholder="">
         </div>
       </div>
       <h3 class="questions">Yearly turnover for the last 3 years:</h3>
       <div class="form-row">
         <div class="form-holder">
-          <input type="text" class="floating-label-field--s3" id="18-19" name="one_year" placeholder="">
-          <label for="18-19" class="floating-label">2018-2019</label>
+          <label for="18-19">2018-2019</label>
+          <input type="text" id="18-19" name="one_year" placeholder="">
         </div>
         <div class="form-holder">
-          <input type="text" class=" floating-label-field--s3" id="17-18" name="two_year" placeholder="">
-          <label for="17-18" class="floating-label">2017-2018</label>
+          <label for="17-18">2017-2018</label>
+          <input type="text" id="17-18" name="two_year" placeholder="">
         </div>
         <div class="form-holder">
-          <input type="text" class=" floating-label-field--s3" id="16-17" name="three_year" placeholder="">
-          <label for="16-17" class="floating-label">2016-2017</label>
+          <label for="16-17">2016-2017</label>
+          <input type="text" id="16-17" name="three_year" placeholder="">
         </div>
       </div>
 
@@ -315,17 +340,19 @@
 
       <div class="form-row-full">
         <div class="form-holder">
+          <label for="credentials">Credentials</label>
           <i class="zmdi zmdi-question"></i>
-          <input type="text" class=" floating-label-field--s3" id="credentials" name="credentials" placeholder="">
-          <label for="credentials" class="floating-label">Credentials</label>
+          <input type="text" id="credentials" name="credentials" placeholder="">
         </div>
       </div>
 
       <button type="button" name="previous" class="previous action-button">Previous</button>
-      <button type="submit" class="action-button" value="Submit">Submit</button>
+      <button type="submit" class="action-button" value="Submit">Submit</button> -->
 
     </fieldset>
   </form>
+
+
   <script src='js/jquery.min.js'></script>
   <script src='js/jquery.easing.min.js'></script>
 
