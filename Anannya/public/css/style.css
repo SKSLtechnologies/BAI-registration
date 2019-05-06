@@ -21,8 +21,8 @@
 
 html {
 	height: auto;
-	background: url("../images/form-wizard-bg.jpg") center center;
-	background-size: cover;
+	background-image:linear-gradient(to bottom, rgba(0,0,0,0.36) 100%, transparent), url(../images/background.jpg);
+	background-size: repeat;
 }
 
 /* body {
@@ -137,7 +137,7 @@ body {
 
 #progressbar li {
 	list-style-type: none;
-	color: black;
+	color: whitesmoke;
 	text-transform: uppercase;
 	font-size: 9px;
 	width: 33.33%;
@@ -180,7 +180,7 @@ body {
 /*The number of the step and the connector before it = green*/
 #progressbar li.active:before,
 #progressbar li.active:after {
-	background: #27AE60;
+	background: orange;
 	color: white;
 }
 
@@ -455,7 +455,7 @@ body {
 
     transition: border-color .25s ease-in-out;
 
-    color: rgb(161, 159, 159);
+    color: rgb(78, 78, 78);
     border: 1px solid rgba(255, 255, 255, .1);
     border-radius: 5px;
     background-color: transparent;
@@ -508,8 +508,7 @@ body {
 
 @media (max-width: 767px) {
 	html {
-		background: url("../images/form-wizard-bg.jpg") no-repeat center center;
-		background-size: cover;
+		background: none;
 		height: auto;
 		display: block;
 	}
@@ -544,5 +543,3 @@ body {
 
 
 }
-
-.required:after { content:" *"; }

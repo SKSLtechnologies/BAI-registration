@@ -1,6 +1,6 @@
-var table = document.getElementById("myTable");
+var table = document.getElementById("myTable"); 
 axios
-  .get("https://infinite-hamlet-63164.herokuapp.com/members")
+  .get("https://bai-registration.herokuapp.com/members")
   .then(function(response) {
     for (var i = 0; i < response.data.length; i++) {
       row = table.insertRow(i);

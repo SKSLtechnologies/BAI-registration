@@ -1,5 +1,4 @@
-
-
+/* 
 
 div.material-table {
   padding: 0;
@@ -85,7 +84,6 @@ div.material-table .table-footer label {
   display: -webkit-flex;
   display: flex;
   -webkit-flex-direction: row;
-  /* works with row or column */
   
   flex-direction: row;
   -webkit-align-items: center;
@@ -98,7 +96,6 @@ div.material-table .table-footer .select-wrapper {
   display: -webkit-flex;
   display: flex;
   -webkit-flex-direction: row;
-  /* works with row or column */
   
   flex-direction: row;
   -webkit-align-items: center;
@@ -180,7 +177,7 @@ div.material-table table th {
   font-weight: 500;
   color: #757575;
   cursor: pointer;
-  white-space: nowrap;
+  white-space: normal;
   padding: 0;
   height: 56px;
   padding-left: 56px;
@@ -235,5 +232,93 @@ div.material-table table td:first-child {
 div.material-table table th:last-child,
 div.material-table table td:last-child {
   padding: 0 14px 0 0;
+} */
+
+.table-header {
+  height: 64px;
+  padding-left: 24px;
+  padding-right: 14px;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: flex;
+  -webkit-display: flex;
+  /* border-bottom: solid 1px #DDDDDD; */
 }
 
+.table-title {
+  font-size: 20px;
+  color: #000;
+}
+
+.table-header i {
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 24px;
+}
+
+.actions {
+  display: -webkit-flex;
+  margin-left: auto;
+}
+
+#div1 {
+  background: white;
+  border: 0 none;
+  border-radius: 3px;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.4);
+  padding: 20px 30px;
+  box-sizing: border-box;
+  width: 80%;
+  margin: 0 10% 5% 10%;
+}
+
+
+
+#mytable {
+  table-layout: auto;
+  width: 100%;
+}
+
+#mytable td {
+  /* border: 1px solid blue; */
+  padding: 10px 10px 10px 10px;
+  max-height: 480px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.87);
+  border-bottom: solid 1px #DDDDDD;
+  white-space: normal;
+  overflow: hidden;
+  text-align: left;
+}
+
+#mytable tr:hover {
+  background-color: #EEE;
+  cursor: pointer;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+
+@media (max-width: 767px) {
+
+  #mytable {
+    table-layout: auto;
+    width: 50%;
+  }
+
+  #div1 {
+		width:90%;
+		padding: 0;
+		height: auto;
+	}
+  .hide-on-mobile {
+    display: none;
+  }
+
+  .small-w {
+    max-width: 0.5%;
+  }
+
+}

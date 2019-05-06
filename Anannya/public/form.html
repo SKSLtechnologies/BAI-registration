@@ -24,13 +24,13 @@
       <li>Project Details</li>
     </ul>
     <!-- fieldsets -->
-    <fieldset>
+    <fieldset> 
       <h2 class="fs-title">Basic Details</h2>
       <h3 class="fs-subtitle">This is step 1</h3>
       <div class="form-row">
         <div class="form-holder">
           <i class="zmdi zmdi-account"></i>
-          <input type="text" class="floating-label-field form-control floating-label-field--s3" id="contractor-name"
+          <input type="text" class="floating-label-field form-control floating-label-field--s3" id="contractor-name" pattern="[A-Za-z]{3}"
             placeholder="Contractor's Name" autofocus required>
             <label for="contractor-name" class="floating-label">Contractor's Name</label>
         </div>
@@ -193,7 +193,7 @@
       <div class="form-row-full">
         <div class="form-holder">
           <i class="zmdi zmdi-favorite"></i>
-          <input type="text" class="floating-label-field form-control floating-label-field--s3" id="website"
+          <input type="url" class="floating-label-field form-control floating-label-field--s3" id="website"
             placeholder="Website">
           <label for="website" class="floating-label">Website</label>
         </div>
@@ -207,7 +207,7 @@
       <div class="form-row">
         <div class="form-holder">
           <div class="custom-select">
-            <select class="floating-label-field floating-label-field--s3" id="clients">
+            <select class="floating-label-field floating-label-field--s3" id="clients" >
               <option value="0">                       </option>
               <option value="1">CIL</option>
               <option value="2">NTPC</option>
@@ -356,7 +356,7 @@
 
 
 
-  <script src="js/index.js"></script>
+  <script src="/js/index.js"></script>
 
 
 
