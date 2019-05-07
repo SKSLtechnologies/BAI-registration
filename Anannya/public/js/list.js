@@ -18,6 +18,7 @@ $(document).ready(function () {
       }
     })
     .then(function (response) {
+<<<<<<< HEAD
       for (var i = 0; i < response.data.length; i++) {
         var tr = "<tr>";
         var td1 = "<td class="+"small-w>" + response.data[i]["name"] + "</td>";
@@ -28,6 +29,16 @@ $(document).ready(function () {
         var td6 = "<td class="+"hide-on-mobile>" + response.data[i]["work_nature"] + "</td></tr>";
         $("#mytable").append(tr + td1 + td5 + td2 + td3 + td4 + td6);
 
+=======
+      for (var i = 1; i <response.data.length; i++) {
+        var tr = "<tr>";
+        var td4 = "<td class="+"hide-on-mobile>" + i + "</td>";
+        var td1 = "<td class="+"small-w>" + response.data[i]["name"] + "</td>";
+        var td5 = "<td class="+"small-w>" + response.data[i]["org_name"] + "</td>";
+        var td2 = "<td class="+"hide-on-mobile>" + response.data[i]["address"] + "</td>";
+        var td3 = "<td>" + response.data[i]["city"] + "</td>";
+        $("#mytable").append(tr + td4 + td1 + td5 + td2 + td3);
+>>>>>>> 1d4f4e7ea1b765f02bbb37a9c1017c6cb425c512
       }
     })
     .catch(function (error) {

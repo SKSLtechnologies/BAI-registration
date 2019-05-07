@@ -9,6 +9,7 @@ $(".next").click(function(){
 	animating = true;
 	
 	current_fs = $(this).parent();
+<<<<<<< HEAD
 	next_fs = $(this).parent().next();
 	
 	//activate next step on progressbar using the index of next_fs
@@ -16,6 +17,16 @@ $(".next").click(function(){
 	
 	//show the next fieldset
 	next_fs.show(); 
+=======
+  next_fs = $(this).parent().next();
+
+  	//activate next step on progressbar using the index of next_fs
+	$("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+	
+  //show the next fieldset
+  next_fs.show();
+   
+>>>>>>> 1d4f4e7ea1b765f02bbb37a9c1017c6cb425c512
 	//hide the current fieldset with style
 	current_fs.animate({opacity: 0}, {
 		step: function(now, mx) {
@@ -40,6 +51,10 @@ $(".next").click(function(){
 		//this comes from the custom easing plugin
 		easing: 'easeInQuad'
 	});
+<<<<<<< HEAD
+=======
+  
+>>>>>>> 1d4f4e7ea1b765f02bbb37a9c1017c6cb425c512
 });
 
 $(".previous").click(function(){
@@ -154,4 +169,8 @@ function closeAllSelect(elmnt) {
 
 /* If the user clicks anywhere outside the select box,
 then close all select boxes: */
+<<<<<<< HEAD
 document.addEventListener("click", closeAllSelect);
+=======
+document.addEventListener("click", closeAllSelect);
+>>>>>>> 1d4f4e7ea1b765f02bbb37a9c1017c6cb425c512
