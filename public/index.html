@@ -50,59 +50,59 @@
       <div class="form-row">
         <div class="form-holder">
           <i class="zmdi zmdi-account"></i>
-          <label for="name">Contact Person</label>
+          <label for="name" class="toplabel">Contact Person</label>
           <input type="text" id="contractor-name" name="name" placeholder="">
         </div>
         <div class="form-holder">
-          <label for="org-name">Organization's Name</label>
+          <label for="org-name" class="toplabel">Organization's Name</label>
           <i class="zmdi zmdi-account"></i>
           <input type="text" id="org-name" name="org_name" placeholder="">
         </div>
       </div>
       <div class="form-row">
         <div class="form-holder">
-          <label for="email">Email ID</label>
+          <label for="email" class="toplabel">Email ID</label>
           <i class="zmdi zmdi-email"></i>
           <input type="text" id="email" name="email" placeholder="">
         </div>
         <div class="form-holder">
-          <label for="website">Website</label>
+          <label for="website" class="toplabel">Website</label>
           <i class="zmdi zmdi-favorite"></i>
           <input type="text" id="website" name="website" placeholder="">
         </div>
       </div>
       <div class="form-row-full">
         <div class="form-holder">
-          <label for="address">Address</label>
+          <label for="address" class="toplabel">Address</label>
           <i class="zmdi zmdi-map"></i>
           <input type="text" id="address" name="address" placeholder="">
         </div>
       </div>
       <div class="form-row">
         <div class="form-holder">
-          <label for="city">City</label>
+          <label for="city" class="toplabel">City</label>
           <i class="zmdi zmdi-pin"></i>
           <input type="text" id="city" name="city" placeholder="">
         </div>
         <div class="form-holder">
-          <label for="state">State</label>
+          <label for="state" class="toplabel">State</label>
           <i class="zmdi zmdi-pin"></i>
           <input type="text" id="state" name="state" placeholder="">
         </div>
         <div class="form-holder">
-          <label for="pin-code">Pin Code</label>
+          <label for="pin-code" class="toplabel">Pin Code</label>
           <i class="zmdi zmdi-pin"></i>
           <input type="text" id="pin-code" name="pin" placeholder="">
         </div>
       </div>
       <div class="form-row">
         <div class="form-holder">
-          <label for="phone">Phone Number</label>
+          <label for="phone" class="toplabel">Phone Number</label>
           <i class="zmdi zmdi-smartphone-android"></i>
           <input type="text" name="phone" id="phone" placeholder="">
         </div>
         <div class="form-holder">
-          <label for="office">Office Number</label>
+          <label for="office" class="toplabel">Office Number</label>
           <i class="zmdi zmdi-phone"></i>
           <input type="text" id="office" name="office" placeholder="">
         </div>
@@ -114,48 +114,47 @@
       <h3 class="fs-subtitle">This is Step 2</h3>
       <div class="form-row">
         <div class="form-holder">
-          <label for="md-name">MD's Name</label>
+          <label for="md-name" class="toplabel">MD's Name</label>
           <i class="zmdi zmdi-account"></i>
           <input type="text" id="md-name" name="md_name" placeholder="">
         </div>
         <div class="form-holder">
-          <label for="dir-name">Directors' Name</label>
+          <label for="dir-name" class="toplabel">Directors' Name</label>
           <i class="zmdi zmdi-account"></i>
           <input type="text" id="dir-name" name="director_name">
         </div>
       </div>
       <div class="form-row">
         <div class="form-holder">
-         <label for="part-name">Partner's Name</label>            <i class="zmdi zmdi-account"></i>
-         <input type="text" id="part-name" name="partner_name" placeholder="">
+          <label for="part-name" class="toplabel">Partner's Name</label> <i class="zmdi zmdi-account"></i>
+          <input type="text" id="part-name" name="partner_name" placeholder="">
         </div>
         <div class="form-holder">
-         <label for="prop-name">Proprietor's Name</label>            <i class="zmdi zmdi-account"></i>
-         <input type="text" id="prop-name" name="prop_name" placeholder="">
-       </div>
+          <label for="prop-name" class="toplabel">Proprietor's Name</label> <i class="zmdi zmdi-account"></i>
+          <input type="text" id="prop-name" name="prop_name" placeholder="">
+        </div>
       </div>
       <div class="form-row">
-        <div class="form-holder">   
-          <label for="org-type">Organization Type</label>         
+        <div class="form-holder">
           <div class="custom-select">
-   
-            <select id="org-type" name="org_type">
+            <select class="floating-label-field floating-label-field--s3" id="org-type" name="org_type">
               <option value="0"> - </option>
               <option value="Ltd.">Ltd.</option>
               <option value="Pvt. Ltd.">Pvt. Ltd.</option>
               <option value="Partnership">Partnership</option>
               <option value="Others">Others</option>
             </select>
+            <label for="org-type" class="floating-label">Organization Type</label>
           </div>
         </div>
         <div class="form-holder">
           <div class="custom-select">
-            <label for="org-type">Are you a BAI member?</label>
-            <select id="member" name="member">
+            <select class="floating-label-field floating-label-field--s3" id="member" name="member">
               <option value="0"> - </option>
               <option value="Yes">Yes</option>
               <option value="No">No</option>
             </select>
+            <label for="member" class="floating-label">Are you a member of BAI?</label>
           </div>
         </div>
       </div>
@@ -213,8 +212,7 @@
       <div class="form-row">
         <div class="form-holder">
           <div class="custom-select">
-              <label for="clients">Clients</label>
-            <select id="clients" name="clients">
+            <select class="floating-label-field floating-label-field--s3" id="clients" name="clients">
               <option value="0"> - </option>
               <option value="CIL">CIL</option>
               <option value="NTPC">NTPC</option>
@@ -230,22 +228,23 @@
               <option value="Private">Private</option>
               <option value="Others">Others</option>
             </select>
+            <label for="clients" class="floating-label">Name of the Clients</label>
           </div>
         </div>
         <div class="form-holder">
           <div class="custom-select">
-            <label for="contract">Contract type</label>
             <select class="floating-label-field floating-label-field--s3" id="contract" name="contract_type">
               <option value="0"> - </option>
               <option value="EPC Contract">EPC Contract</option>
               <option value="Lumpsum Contract">Lumpsum Contract</option>
             </select>
+            <label for="contract" class="floating-label">Contract Type</label>
           </div>
         </div>
       </div>
       <div class="form-row-full">
         <div class="form-holder">
-          <label for="largest-contract">Single Largest Contract in the last 5 years (Rs.)</label>
+          <label for="largest-contract" class="toplabel">Single Largest Contract in the last 5 years (Rs.)</label>
           <i class="zmdi zmdi-money"></i>
           <input type="text" id="largest-contract" name="largest_contract" placeholder="">
         </div>
@@ -253,15 +252,15 @@
       <h3 class="questions">Yearly turnover for the last 3 years:</h3>
       <div class="form-row">
         <div class="form-holder">
-          <label for="18-19">2018-2019</label>
+          <label for="18-19" class="toplabel">2018-2019</label>
           <input type="text" id="18-19" name="one_year" placeholder="">
         </div>
         <div class="form-holder">
-          <label for="17-18">2017-2018</label>
+          <label for="17-18" class="toplabel">2017-2018</label>
           <input type="text" id="17-18" name="two_year" placeholder="">
         </div>
         <div class="form-holder">
-          <label for="16-17">2016-2017</label>
+          <label for="16-17" class="toplabel">2016-2017</label>
           <input type="text" id="16-17" name="three_year" placeholder="">
         </div>
       </div>
@@ -340,14 +339,14 @@
 
       <div class="form-row-full">
         <div class="form-holder">
-          <label for="credentials">Credentials</label>
+          <label for="credentials" class="toplabel">Credentials</label>
           <i class="zmdi zmdi-question"></i>
           <input type="text" id="credentials" name="credentials" placeholder="">
         </div>
       </div>
 
       <button type="button" name="previous" class="previous action-button">Previous</button>
-      <button type="submit" class="action-button" value="Submit">Submit</button> -->
+      <button type="submit" class="action-button" value="Submit">Submit</button>
 
     </fieldset>
   </form>
