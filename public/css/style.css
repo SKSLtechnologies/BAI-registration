@@ -260,7 +260,6 @@ body {
 	cursor: pointer;
 	height: 0;
 	width: 0;
-
 }
 
 /* Create a custom checkbox */
@@ -326,19 +325,7 @@ body {
 	top: 50%;
 	transform: translateY(-50%);
 	/* right: 20px; */
-}
-
-.for label {
-	float: left;
-	background: #FFFFFF;
-	height: 14px;
-	padding: 2px 5px 2px 5px;
-	color: black;
-	font-size: 14px;
-	font-family: "Lato-Regular";
-	z-index: 2147483647;
-	transform: translate(0, 8px) scale(.9);
-	color: black;
+	z-index: 100;
 }
 
 .custom-select select {
@@ -350,6 +337,7 @@ body {
 	color: #999;
 	padding: 10px;
 	cursor: pointer;
+
 }
 
 .select-items div {
@@ -366,8 +354,6 @@ body {
 	top: 100%;
 	left: 0;
 	right: 0;
-	z-index: 1000;
-
 }
 
 /* Hide the items when the select box is closed: */
