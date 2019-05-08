@@ -162,10 +162,30 @@ h1 {
 	.button {
 		top: 50%;
 		width: 11rem;
-		height: 4.5rem;
+		font-size: 18px;
 	}
 
+	.split.left:before,
+	.split.right:before {
+		transition: none;
+	}
+
+	.hover-left .left {
+		width: 50%;
+	}
+
+	.hover-left .right {
+		width: 50%;
+	}
+
+
+	.hover-right .right {
+		width: 50%;
+	}
+
+	.hover-right .left {
+		width: 50%;
+	}
+
+
 }
-
-
-
