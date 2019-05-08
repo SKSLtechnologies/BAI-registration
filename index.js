@@ -20,7 +20,7 @@ app.use(bodyParser.json())
 app.use(cors())
 
 app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname + '/public/index.html'));
+    res.sendFile(path.join(__dirname + '/public/views/home.html'));
 });
 
 mongoose.Promise = global.Promise;
@@ -34,13 +34,9 @@ mongoose.connect(dbConfig.url, {
     console.log('Could not connect to the database. Exiting now...', err);
     process.exit();
 });
-// define a simple route
-// app.get('/home', (req, res) => {
-//     res.json({"message": "Submitted"});
-// });
 
 app.get('/home', function (req, res) {
-    res.sendFile(path.join(__dirname + '/public/success.html'));
+    res.sendFile(path.join(__dirname + '/public/views/success.html'));
 });
 
 require('./app/routes/bai.routes.js')(app);

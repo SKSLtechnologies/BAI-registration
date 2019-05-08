@@ -55,8 +55,9 @@ body {
 	padding: 20px 30px;
 	box-sizing: border-box;
 	width: 80%;
-	margin: 0 10%;
+	margin: 0 0 10% 10%;
 	position: relative;
+	height:auto;
 }
 
 /*Hide all except first fieldset*/
@@ -385,6 +386,20 @@ body {
 	color: black;
 	background-color: white;
 }
+
+.footer {
+	font-family: "Lato-Bold";
+	font-size: 14px;
+	color: #222;
+	position: relative;
+	background: #fff;
+	left:50%;
+	bottom: 5%;
+	transform: translateX(-50%);
+	white-space: nowrap;
+	padding-top:18px;
+}
+
 
 
 @media (max-width: 767px) {
