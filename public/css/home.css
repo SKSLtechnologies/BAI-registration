@@ -160,15 +160,12 @@ h1 {
 @media(max-width: 800px) {
 
 	.button {
+		top: 50%;
 		width: 11rem;
-		font-size: 18px;
+		height: 4.5rem;
 	}
 
 }
 
-@media(max-height: 700px) {
-	.button {
-		top: 55%;
-	}
 
-}
+
