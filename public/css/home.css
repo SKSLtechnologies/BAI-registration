@@ -158,17 +158,12 @@ h1 {
 }
 
 @media(max-width: 800px) {
-	h1 {
-		font-size: 2rem;
-	}
 
 	.button {
-		width: 12rem;
+		width: 11rem;
+		font-size: 18px;
 	}
-	.footer {
-		display:hidden;
-		font-size: 5px;
-	}
+
 }
 
 @media(max-height: 700px) {
@@ -176,7 +171,4 @@ h1 {
 		top: 55%;
 	}
 
-	.footer {
-		font-size: 5px;
-	}
 }
