@@ -187,5 +187,9 @@ h1 {
 		width: 50%;
 	}
 
+	h1 {
+		font-size: 12px;
+		font-family: "Lato-Regular";
+	}
 
 }
