@@ -436,4 +436,10 @@ body {
 		height: 25px;
 		text-align: center;
 	}
+
+	.footer {
+		font-size: 10px;
+	}
+	
+	
 }

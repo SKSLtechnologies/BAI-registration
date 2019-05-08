@@ -19,18 +19,20 @@
 	margin: 0;
 	padding: 0;
 }
-:root {
-	--container-bg-color: #333 ;    
-	--hover-width: 75% ;
-	--other-width: 25% ;
-	--speed: 1000ms;
-}
 
-html,body {
-	padding:0;
-	margin:0;
-	font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-	width:100%;
+/* :root {
+	--container-bg-color: #333;
+	--hover-width: 75%;
+	--other-width: 25%;
+	--speed: 1000ms;
+} */
+
+html,
+body {
+	padding: 0;
+	margin: 0;
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	width: 100%;
 	height: 100%;
 	overflow-x: hidden;
 }
@@ -42,7 +44,7 @@ h1 {
 	position: absolute;
 	background: #fff;
 	padding: 10px;
-	left:50%;
+	left: 50%;
 	top: 90%;
 	transform: translateX(-50%);
 	white-space: nowrap;
@@ -80,7 +82,7 @@ h1 {
 	border-color: var(--right-button-hover-color);
 }
 
-.container{
+.container {
 	position: relative;
 	width: 100%;
 	height: 100%;
@@ -92,7 +94,7 @@ h1 {
 	width: 50%;
 	height: 100%;
 	overflow: hidden;
-	}
+}
 
 .split.left {
 	left: 0;
@@ -124,8 +126,10 @@ h1 {
 	background: var(--right-bg-color);
 }
 
-.split.left, .split.right,
-.split.left:before, .split.right:before {
+.split.left,
+.split.right,
+.split.left:before,
+.split.right:before {
 	transition: var(--speed) all ease-in-out;
 }
 
@@ -153,18 +157,26 @@ h1 {
 	z-index: 2;
 }
 
-@media(max-width: 800px){
+@media(max-width: 800px) {
 	h1 {
 		font-size: 2rem;
 	}
+
 	.button {
 		width: 12rem;
 	}
+	.footer {
+		display:hidden;
+		font-size: 5px;
+	}
 }
 
-@media(max-height: 700px){
-   .button {
-	   top: 55%;
-   } 
-}
+@media(max-height: 700px) {
+	.button {
+		top: 55%;
+	}
 
+	.footer {
+		font-size: 5px;
+	}
+}
