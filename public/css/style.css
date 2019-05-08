@@ -131,7 +131,7 @@ body {
 	font-weight: normal;
 	font-size: 13px;
 	color: rgb(160, 5, 57);
-	margin-bottom: 20px;
+	padding-bottom: 25px;
 }
 
 .questions {
@@ -439,6 +439,7 @@ body {
 
 	.footer {
 		font-size: 10px;
+		font-family: "Lato-Regular";
 	}
 	
 	
