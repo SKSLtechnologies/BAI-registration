@@ -1,23 +1,21 @@
 $(document).ready(function () {
   console.log("ready!");
 
-  
-
-var modal = document.getElementById('myModal');
-var span = document.getElementsByClassName("close")[0];
-  $(".filter").click(function(){
+  var modal = document.getElementById('myModal');
+  var span = document.getElementsByClassName("close")[0];
+  $(".filter").click(function () {
     console.log("HELP ME")
     modal.style.display = "block";
   });
-  span.onclick = function() {
+  span.onclick = function () {
     modal.style.display = "none";
   }
-  
-  // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function(event) {
+
+  window.onclick = function (event) {
     if (event.target == modal) {
       modal.style.display = "none";
-    }}
+    }
+  }
 
   var table = document.getElementById("myTable");
   var tbl = $("<table/>").attr("id", "mytable");
@@ -40,7 +38,7 @@ var span = document.getElementsByClassName("close")[0];
       var th5 = "<th style='padding:0 124px;'>Email</th></tr><thead><tbody>";
       $("#mytable").append(tr + th1 + th2 + th3 + th4 + th5);
       for (var i = 1; i < response.data.length; i++) {
-        
+
         var td1 = "<tr><td class=" + "hide-on-mobile>" + i + "</td>";
         var td2 = "<td>" + response.data[i]["name"] + "</td>";
         var td3 = "<td>" + response.data[i]["city"] + "</td>";

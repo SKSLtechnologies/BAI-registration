@@ -60,8 +60,8 @@ body {
   /* border-collapse: collapse; */
 }
 
-tbody{
-  display:block;
+tbody {
+  display: block;
   width: 100%;
   overflow: auto;
   height: 500px;
@@ -91,6 +91,7 @@ tr:nth-child(even) {
 thead tr {
   display: block;
 }
+
 thead tr th {
   /* width: 100px; */
   font-family: "Lato-Bold";
@@ -106,6 +107,7 @@ thead tr th {
   text-align: center;
   line-height: 1px;
 }
+
 .tbl-content {
   height: 500px;
   overflow-x: auto;
