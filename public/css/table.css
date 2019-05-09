@@ -183,43 +183,34 @@ thead tr th {
 }
 
 .copyright {
-	font-family: "Lato-Bold";
-	font-size: 14px;
-	color: #222;
-	position: absolute;
-	background: #fff;
-	padding: 10px;
-	left: 50%;
-	top: 90%;
-	transform: translateX(-50%);
-	white-space: nowrap;
+  font-family: "Lato-Bold";
+  font-size: 14px;
+  color: #222;
+  position: absolute;
+  background: #fff;
+  padding: 10px;
+  left: 50%;
+  top: 90%;
+  transform: translateX(-50%);
+  white-space: nowrap;
 }
 
 
-@media (max-width: 767px) {
+@media (max-width: 900px) {
 
   body {
-    background-color: #02241b;
-  }
-
-  #mytable {
-    table-layout: auto;
-    width: 100%;
+    background: #02241b;
   }
 
   #div1 {
-    width: 90%;
-    padding: 0;
-    height: auto;
+    width: 80%;
+    margin-left: 10%;
   }
 
   .hide-on-mobile {
     display: none;
   }
 
-  .small-w {
-    max-width: 0.5%;
-  }
 
   #mytable th {
     font-family: "Lato-Regular";

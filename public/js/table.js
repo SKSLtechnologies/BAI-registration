@@ -34,16 +34,16 @@ $(document).ready(function () {
       var th1 = "<th style='padding:0 18px;'>#</th>";
       var th2 = "<th style='padding:0 50px;'>Name</th>";
       var th3 = "<th style='padding:0 35px;'>BAI Center</th>";
-      var th4 = "<th style='padding:0 33px;'>Phone</th>"
-      var th5 = "<th style='padding:0 124px;'>Email</th></tr><thead><tbody>";
+      var th4 = "<th class = 'hide-on-mobile'style='padding:0 33px;'>Phone</th>"
+      var th5 = "<th class = 'hide-on-mobile'style='padding:0 124px;'>Email</th></tr><thead><tbody>";
       $("#mytable").append(tr + th1 + th2 + th3 + th4 + th5);
       for (var i = 1; i < response.data.length; i++) {
 
-        var td1 = "<tr><td class=" + "hide-on-mobile>" + i + "</td>";
+        var td1 = "<tr><td>" + i + "</td>";
         var td2 = "<td>" + response.data[i]["name"] + "</td>";
         var td3 = "<td>" + response.data[i]["city"] + "</td>";
-        var td4 = "<td>" + response.data[i]["office"] + "</td>";
-        var td5 = "<td>" + response.data[i]["email"] + "</td></tr>";
+        var td4 = "<td class=" + "hide-on-mobile>" + response.data[i]["office"] + "</td>";
+        var td5 = "<td  class=" + "hide-on-mobile>" + response.data[i]["email"] + "</td></tr>";
         $("#mytable").append(td1 + td2 + td3 + td4 + td5);
       }
       var th6 = "</tbody>";
