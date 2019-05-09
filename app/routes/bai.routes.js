@@ -13,4 +13,12 @@ module.exports = (app) => {
     //View all members
     app.get('/members', BAIinfo.findAll);
 
+    //View all list 
+    app.get('/list', function (req, res) {
+        res.sendFile(path.join(__dirname + '../../../public/views/table.html'));
+    });
+
+    // Create a new member
+    app.post('/search', BAIinfo.search);
+
 }

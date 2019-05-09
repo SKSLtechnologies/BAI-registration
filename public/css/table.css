@@ -1,0 +1,214 @@
+@font-face {
+  font-family: "Lato-Regular";
+  src: url("../fonts/lato/Lato-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Lato-Black";
+  src: url("../fonts/lato/Lato-Black.ttf");
+}
+
+@font-face {
+  font-family: "Lato-Bold";
+  src: url("../fonts/lato/Lato-Bold.ttf");
+}
+
+/*basic reset*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.036) 100%, transparent), url(../images/table.jpg);
+  background-size: 100%;
+  font-family: 'Lato-Regular', sans-serif;
+}
+
+.table-header {
+  height: 64px;
+  padding-left: 40%;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: flex;
+  -webkit-display: flex;
+  left: 50%;
+}
+
+.table-title {
+  font-family: "Lato-Bold";
+  font-size: 20px;
+  color: #000;
+  text-transform: uppercase;
+}
+
+#div1 {
+  background: white;
+  border-radius: 3px;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.4);
+  padding: 20px 30px;
+  box-sizing: border-box;
+  width: 58%;
+  margin: 0 10% 5% 20%;
+  height: 600px;
+}
+
+#mytable {
+  table-layout: auto;
+  width: 100%;
+  /* border-collapse: collapse; */
+}
+
+tbody{
+  display:block;
+  width: 100%;
+  overflow: auto;
+  height: 500px;
+}
+
+#mytable td {
+  font-family: "Lato-Regular";
+  padding: 10px;
+  max-height: 480px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.87);
+  /* background-color: #EEE; */
+  white-space: normal;
+  overflow: hidden;
+  text-align: left;
+}
+
+#mytable tbody tr:hover {
+  background-color: orange;
+  cursor: pointer;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+thead tr {
+  display: block;
+}
+thead tr th {
+  /* width: 100px; */
+  font-family: "Lato-Bold";
+  padding: 25px 10px 20px 10px;
+  height: 40px;
+  font-size: 15px;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: rgb(21, 7, 71);
+  border-bottom: solid 1px #DDDDDD;
+  white-space: normal;
+  overflow: hidden;
+  text-align: center;
+  line-height: 1px;
+}
+.tbl-content {
+  height: 500px;
+  overflow-x: auto;
+  margin-top: 0px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.74);
+  /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #ffffff;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 30%;
+  border-radius: 3px;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.filter {
+  width: 100px;
+  background: rgb(255, 196, 0);
+  color: black;
+  border: 0 none;
+  border-radius: 1px;
+  cursor: pointer;
+  padding: 10px 5px;
+  font-family: "Lato-Regular";
+  font-size: 15px;
+  position: absolute;
+  right: 10%;
+  text-transform: uppercase;
+}
+
+.filter:hover,
+.filter:focus {
+  box-shadow: 0 0 0 2px white, 0 0 0 3px rgb(58, 58, 58);
+}
+
+@media (max-width: 767px) {
+
+  body {
+    background-color: #02241b;
+  }
+
+  #mytable {
+    table-layout: auto;
+    width: 100%;
+  }
+
+  #div1 {
+    width: 90%;
+    padding: 0;
+    height: auto;
+  }
+
+  .hide-on-mobile {
+    display: none;
+  }
+
+  .small-w {
+    max-width: 0.5%;
+  }
+
+  #mytable th {
+    font-family: "Lato-Regular";
+    font-size: 2%;
+  }
+
+
+}

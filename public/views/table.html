@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Member List</title>
+  <meta charset="UTF-8">
+  <link rel='shortcut icon' href='../images/favicon.ico' type='image/png' />
+  <!-- STYLE CSS -->
+  <link rel="stylesheet" href="../css/table.css">
+</head>
+
+<body>
+
+  <div class="table-header">
+    <!-- <span class="table-title">BAI Member List</span> -->
+    
+  <div id="myModal" class="modal">
+
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h1>Please enter your search criteria</h1>
+      <form method="POST" action="/search" >
+        City:<br>
+        <input type="text" name="city" id="city" placeholder=" ">
+        <br>
+        State:<br>
+        <input type="text" name="state" id="state" placeholder=" ">
+        <br><br>
+        <input type="submit" value="Submit">
+      </form> 
+    </div>
+
+  </div> 
+    <button type="button" name="filter" class="filter">Filter</button>
+
+  </div>
+
+
+  <div id="div1"></div>
+
+
+  <script src='../js/axios.min.js'></script>
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/table.js"></script>
+
+</body>
+
+</html>
