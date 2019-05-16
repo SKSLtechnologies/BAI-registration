@@ -12,14 +12,14 @@ BAI registration and table
 2. Front-end
     - Form
         - Add autofocus :monkey:
-        - Add inline validation
+        - Add inline validation :snake:
         - Add multi-select (clients)
         - Grid select + check (equipments)
-        - Add favicons
-        - Add GST, Aadhar ID, etc.
+        - Add favicons :horse:
+        - Add GST, Aadhar ID, etc. 
         - Add select for states :boar:
         - Clean out HTML/CSS
-        - Mandatory Fields
+        - Mandatory Fields :pig:
         - "Directors' Names" :frog:
         - Add input tel for phone/mobile - https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/tel
         - Once submitted, a modal pops for success of submission - "You have been successfully registered"
