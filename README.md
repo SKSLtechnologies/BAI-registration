@@ -21,7 +21,7 @@ BAI registration and table
         - Clean out HTML/CSS
         - Mandatory Fields :pig:
         - "Directors' Names" :frog:
-        - Add input tel for phone/mobile - https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/tel
+        - Add input tel for phone/mobile - https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/tel :cow:
         - Once submitted, a modal pops for success of submission - "You have been successfully registered"
     - Homepage 
         - Split screen for Registration and Member List - https://codepen.io/facundocorradini/pen/PEKBGy :sheep:
