@@ -71,11 +71,20 @@ $(document).ready(function () {
       $("#mytable").append(th6);
     })
     .catch(function (error) {
-
-      if (!error.response) {
-        this.errorStatus = 'Error: Network Error';
+      if (error.response) {
+        console.log(
+          "Request was made and server responded with a non 200 status"
+        );
+        console.log(error.response.data);
+        console.log(error.response.status);
+        console.log(error.response.headers);
+      } else if (error.request) {
+        console.log("Request was made, but no response was received");
+        console.log(error.request);
       } else {
-        this.errorStatus = error.response.data.message;
+        console.log("Something happened setting up the request");
+        console.log(error.message);
       }
+
     });
 });
