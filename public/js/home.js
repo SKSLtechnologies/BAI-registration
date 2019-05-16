@@ -17,3 +17,5 @@ right.addEventListener('mouseenter', () => {
 right.addEventListener('mouseleave', () => {
     container.classList.remove('hover-right');
 });
+
+localStorage.setItem("on_load_counter", 0)

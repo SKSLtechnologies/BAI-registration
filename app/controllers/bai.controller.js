@@ -1,4 +1,6 @@
 const BAIinfo = require('../models/bai.model.js');
+const fs = require('fs');
+ 
 
 // Create and Save a new member
 exports.create = (req, res) => {
@@ -39,7 +41,6 @@ exports.create = (req, res) => {
     // Save member in the database
     info.save()
         .then(data => {
-            // console.log(data)
             res.redirect('/home')
         }).catch(err => {
             res.status(500).send({
@@ -51,6 +52,13 @@ exports.create = (req, res) => {
 exports.findAll = (req, res) => {
     BAIinfo.find()
         .then(members => {
+            var mySJON = JSON.stringify(members)
+            fs.writeFileSync("writeMe.json", mySJON, function(err) {
+                if(err) {
+                    return console.log(err);
+                }
+                console.log("The file was saved!");
+            });
             res.json(members);
         }).catch(err => {
             res.status(500).send({
@@ -74,14 +82,15 @@ exports.search = (req, res) => {
             city: req.body.city
         }
     }
-    console.log(query);
-    BAIinfo.find(
-        query, {
-            name: 1,
-            city: 1,
-            _id: 0
-        }).then(function (data) {
-        return res.status(200).json(data);
+    BAIinfo.find(query).then(function (data) {
+            var mySJON = JSON.stringify(data)
+            fs.writeFileSync("writeMe.json", mySJON, function(err) {
+                if(err) {
+                    return console.log(err);
+                }
+                console.log("The file was saved!");
+            });
+        res.redirect('/list')
     }).catch(function (err) {
         res.status(500).send({
             message: err.message || "Some error occurred while retrieving members."

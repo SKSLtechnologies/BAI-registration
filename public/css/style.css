@@ -400,6 +400,23 @@ body {
 	padding-top:18px;
 }
 
+input:invalid {
+	background: white;
+}
+input[type=email]:invalid {
+    background: white;
+}
+input:focus:invalid + span::before { 
+	content: "Please fill out this field";
+	display: inline-block;
+	color: red;
+	font-size: 12px;
+}
+
+input:focus:invalid {
+	box-shadow: none;
+}
+
 
 
 @media (max-width: 767px) {

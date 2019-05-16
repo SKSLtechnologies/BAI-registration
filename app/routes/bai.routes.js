@@ -18,6 +18,15 @@ module.exports = (app) => {
         res.sendFile(path.join(__dirname + '../../../public/views/table.html'));
     });
 
+    app.get('/listed', function (req, res) {
+        res.sendFile(path.join(__dirname + '../../../public/views/table1.html'));
+    });
+
+
+    app.get('/searched', function (req, res) {
+        res.sendFile(path.join(__dirname + '../../../writeMe.json'));
+    });
+
     // Create a new member
     app.post('/search', BAIinfo.search);
 

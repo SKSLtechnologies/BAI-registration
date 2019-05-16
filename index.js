@@ -36,7 +36,7 @@ mongoose.connect(dbConfig.url, {
 });
 
 app.get('/home', function (req, res) {
-    res.sendFile(path.join(__dirname + '/public/views/success.html'));
+    res.sendFile(path.join(__dirname + '/public/views/home.html'));
 });
 
 require('./app/routes/bai.routes.js')(app);

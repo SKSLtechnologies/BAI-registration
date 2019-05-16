@@ -16,7 +16,7 @@
 <body>
 
   <!-- multistep form -->
-  <form method="POST" action="/new" id="msform">
+  <form method="POST" action="/new" id="msform" onsubmit="return validate()">
     <!-- progressbar -->
     <ul id="progressbar">
       <li class="active">Basic Details</li>
@@ -31,20 +31,23 @@
       <div class="form-row">
         <div class="form-holder">
           <i class="zmdi zmdi-account"></i>
-          <label for="name" class="toplabel">Contact Person</label>
-          <input type="text" id="contractor-name" name="name" placeholder="" autofocus>
+          <label for="name" class="toplabel">Contact Person *</label>
+          <input type="text" id="contractor-name" name="name" placeholder="" autofocus required >
+          <span></span>
         </div>
         <div class="form-holder">
           <label for="org-name" class="toplabel">Organization's Name</label>
           <i class="zmdi zmdi-account"></i>
-          <input type="text" id="org-name" name="org_name" placeholder="">
+          <input type="text" id="org-name" name="org_name" placeholder="" >
+          <span></span>
         </div>
       </div>
       <div class="form-row">
         <div class="form-holder">
-          <label for="email" class="toplabel">Email ID</label>
+          <label for="email" class="toplabel">Email ID *</label>
           <i class="zmdi zmdi-email"></i>
-          <input type="text" id="email" name="email" placeholder="">
+          <input type="email" id="email" name="email" placeholder="" required>
+          <span></span>
         </div>
         <div class="form-holder">
           <label for="website" class="toplabel">Website</label>
@@ -54,38 +57,43 @@
       </div>
       <div class="form-row-full">
         <div class="form-holder">
-          <label for="address" class="toplabel">Address</label>
+          <label for="address" class="toplabel">Address *</label>
           <i class="zmdi zmdi-map"></i>
-          <input type="text" id="address" name="address" placeholder="">
+          <input type="text" id="address" name="address" placeholder="" required>
+          <span></span>
         </div>
       </div>
       <div class="form-row">
         <div class="form-holder">
-          <label for="city" class="toplabel">City</label>
+          <label for="city" class="toplabel">City *</label>
           <i class="zmdi zmdi-pin"></i>
-          <input type="text" id="city" name="city" placeholder="">
+          <input type="text" id="city" name="city" placeholder="" required>
+          <span></span>
         </div>
         <div class="form-holder">
-          <label for="state" class="toplabel">State</label>
+          <label for="state" class="toplabel">State *</label>
           <i class="zmdi zmdi-pin"></i>
-          <input type="text" id="state" name="state" placeholder="">
+          <input type="text" id="state" name="state" placeholder="" required>
+          <span></span>
         </div>
         <div class="form-holder">
-          <label for="pin-code" class="toplabel">Pin Code</label>
+          <label for="pin-code" class="toplabel">Pin Code *</label>
           <i class="zmdi zmdi-pin"></i>
-          <input type="text" id="pin-code" name="pin" placeholder="">
+          <input type="text" id="pin-code" name="pin" placeholder="" required>
+          <span></span>
         </div>
       </div>
       <div class="form-row">
         <div class="form-holder">
           <label for="phone" class="toplabel">Phone Number</label>
           <i class="zmdi zmdi-smartphone-android"></i>
-          <input type="text" name="phone" id="phone" placeholder="">
+          <input type="text" name="phone" id="phone" placeholder="" >
         </div>
         <div class="form-holder">
-          <label for="office" class="toplabel">Office Number</label>
+          <label for="office" class="toplabel">Office Number *</label>
           <i class="zmdi zmdi-phone"></i>
-          <input type="text" id="office" name="office" placeholder="">
+          <input type="text" id="office" name="office" placeholder="" required>
+          <span></span>
         </div>
       </div>
       <button type="button" name="next" class="next action-button">Next</button>
@@ -183,7 +191,6 @@
           <span class="checkmark"></span>
         </label>
       </div>
-
 
       <button type="button" name="previous" class="previous action-button">Previous</button>
       <button type="button" name="next" class="next action-button">Next</button>
@@ -326,7 +333,7 @@
           <i class="zmdi zmdi-question"></i>
           <input type="text" id="credentials" name="credentials" placeholder="">
         </div>
-      </div>
+      </div> 
 
       <button type="button" name="previous" class="previous action-button">Previous</button>
       <button type="submit" class="action-button" value="Submit">Submit</button>

@@ -79,6 +79,28 @@ tbody {
   text-align: left;
 }
 
+.tno {
+  width: 26px !important;
+}
+
+.tname {
+  width: 124px !important;
+}
+
+.tplace {
+  width: 136px !important;
+}
+
+.tphone {
+  width: 99.5px !important;
+}
+
+.temail {
+  width: 270px !important;
+}
+
+
+
 #mytable tbody tr:hover {
   background-color: orange;
   cursor: pointer;
@@ -93,7 +115,6 @@ thead tr {
 }
 
 thead tr th {
-  /* width: 100px; */
   font-family: "Lato-Bold";
   padding: 25px 10px 20px 10px;
   height: 40px;
@@ -119,23 +140,15 @@ thead tr th {
 /* The Modal (background) */
 .modal {
   display: none;
-  /* Hidden by default */
   position: fixed;
-  /* Stay in place */
   z-index: 1;
-  /* Sit on top */
   padding-top: 100px;
-  /* Location of the box */
   left: 0;
   top: 0;
   width: 100%;
-  /* Full width */
   height: 100%;
-  /* Full height */
   overflow: auto;
-  /* Enable scroll if needed */
   background-color: rgba(0, 0, 0, 0.74);
-  /* Black w/ opacity */
 }
 
 .modal-content {
