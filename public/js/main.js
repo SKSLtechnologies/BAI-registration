@@ -1,22 +1,20 @@
-$("select.org_type").change(function(){
+$("select.org_type").change(function () {
   var selectedOption = $(this).children("option:selected").val();
-  if(selectedOption=="Others") {
+  if (selectedOption == "Others") {
     $('#orgSpan').show()
-  }
-  else {
+  } else {
     $('#orgSpan').hide()
   }
-  
+
 });
-$("select.member").change(function(){
+$("select.member").change(function () {
   var selectedOption = $(this).children("option:selected").val();
-  if(selectedOption=="Yes") {
+  if (selectedOption == "Yes") {
     $('#bai_code').show()
-  }
-  else {
+  } else {
     $('#bai_code').hide()
   }
-  
+
 });
 var current_fs, next_fs, previous_fs; //fieldsets
 var left, opacity, scale; //fieldset properties which we will animate
@@ -29,9 +27,7 @@ $(".next").click(function () {
     $('#office').val() == "") {
 
     alert("Please fill out required fields to proceed. (*)")
-  }
-
-  else {
+  } else {
     if (animating) return false;
     animating = true;
 

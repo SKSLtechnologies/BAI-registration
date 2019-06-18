@@ -7,6 +7,10 @@ module.exports = (app) => {
         res.sendFile(path.join(__dirname + '../../../public/views/register.html'));
     });
 
+    app.get('/success', function (req, res) {
+        res.sendFile(path.join(__dirname + '../../../public/views/success.html'));
+    });
+
     // Create a new member
     app.post('/new', BAIinfo.create);
 
