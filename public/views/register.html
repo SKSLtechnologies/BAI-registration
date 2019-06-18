@@ -6,17 +6,26 @@
   <title>BAI Registeration</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- MATERIAL DESIGN ICONIC FONT -->
-  <link rel="stylesheet" href="../fonts/material-design-iconic-font/css/material-design-iconic-font.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
   <!-- STYLE CSS -->
   <link rel="stylesheet" href="../css/style.css">
   <link rel='shortcut icon' href='../images/favicon.ico' type='image/png' />
+  <link rel="stylesheet" href="../css/materialize.min.css">
+
+  <script src='../js/jquery.min.js'></script>
+  <script src="../js/materialize.min.js"></script>
+  <script src="../js/validate.min.js"></script>
+
+  <!-- <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css'> -->
+
 
 </head>
 
 <body>
 
   <!-- multistep form -->
-  <form method="POST" action="/new" id="msform" onsubmit="return validate()">
+  <form id="msform">
     <!-- progressbar -->
     <ul id="progressbar">
       <li class="active">Basic Details</li>
@@ -25,325 +34,286 @@
     </ul>
     <!-- fieldsets -->
 
-    <fieldset id="fortheloveoflabels">
+   <fieldset >
       <h2 class="fs-title">Basic Details</h2>
       <h3 class="fs-subtitle">This is step 1</h3>
-      <div class="form-row">
-        <div class="form-holder">
-          <i class="zmdi zmdi-account"></i>
-          <label for="name" class="toplabel">Contact Person *</label>
-          <input type="text" id="contractor-name" name="name" placeholder="" autofocus required >
-          <span></span>
+
+      <div class="row">
+        <div class="input-field col s6">
+          <input placeholder="Please enter your full name" minlength="5" id="contractor-name" name="name"  type="text" class="validate" required autocomplete="off"
+            autofocus onchange="myFunction()">
+          <label for="contractor_name">Contact Person's Name <span style="color: red; font-size: 15px !important">*</span></label>
         </div>
-        <div class="form-holder">
-          <label for="org-name" class="toplabel">Organization's Name</label>
-          <i class="zmdi zmdi-account"></i>
-          <input type="text" id="org-name" name="org_name" placeholder="" >
-          <span></span>
+        <div class="input-field col s6">
+          <input placeholder="Please enter your company name" minlength="2" id="org-name" name="org_name" type="text" class="validate" required autocomplete="off">
+          <label for="org_name">Organization's Name <span style="color: red; font-size: 15px !important"">*</span></label>
         </div>
       </div>
-      <div class="form-row">
-        <div class="form-holder">
-          <label for="email" class="toplabel">Email ID *</label>
-          <i class="zmdi zmdi-email"></i>
-          <input type="email" id="email" name="email" placeholder="" required>
-          <span></span>
+      <div class="row">
+        <div class="input-field col s6">
+          <input placeholder="email@gmail.com" id="email" name="email" type="email" minlength="2" class="validate" required autocomplete="off">
+          <label for="email">Email Address <span style="color: red; font-size: 15px !important"">*</span></label>
         </div>
-        <div class="form-holder">
-          <label for="website" class="toplabel">Website</label>
-          <i class="zmdi zmdi-favorite"></i>
-          <input type="text" id="website" name="website" placeholder="">
+        <div class="input-field col s6">
+          <input placeholder="https://www.yourwebsite.com" id="website" name="website" type="url" class="validate" autocomplete="off">
+          <label for="website">Website </label>
         </div>
       </div>
-      <div class="form-row-full">
-        <div class="form-holder">
-          <label for="address" class="toplabel">Address *</label>
-          <i class="zmdi zmdi-map"></i>
-          <input type="text" id="address" name="address" placeholder="" required>
-          <span></span>
+      <div class="row">
+        <div class="input-field col s12">
+          <input placeholder="Please enter the street address" type="text" minlength="5" id="address" name="address" class="validate" required autocomplete="off">
+          <label for="address">Address <span style="color: red; font-size: 15px !important"">*</span></label>
         </div>
       </div>
-      <div class="form-row">
-        <div class="form-holder">
-          <label for="city" class="toplabel">City *</label>
-          <i class="zmdi zmdi-pin"></i>
-          <input type="text" id="city" name="city" placeholder="" required>
-          <span></span>
+      <div class="row">
+        <div class="input-field col s4">
+          <input placeholder="Please enter the city" id="city" name="city"  type="text" class="validate" required autocomplete="off">
+          <label for="city">City <span style="color: red; font-size: 15px !important"">*</span></label>
         </div>
-        <div class="form-holder">
-          <label for="state" class="toplabel">State *</label>
-          <i class="zmdi zmdi-pin"></i>
-          <input type="text" id="state" name="state" placeholder="" required>
-          <span></span>
+        <div class="input-field col s4">
+            <input placeholder="Please enter the state"  type="text" id="state" name="state" class="autocompleteState validate" required autocomplete="off">
+            <label for="state">State <span style="color: red; font-size: 15px !important"">*</span></label>
         </div>
-        <div class="form-holder">
-          <label for="pin-code" class="toplabel">Pin Code *</label>
-          <i class="zmdi zmdi-pin"></i>
-          <input type="text" id="pin-code" name="pin" placeholder="" required>
-          <span></span>
+        <div class="input-field col s4">
+          <input  placeholder="Please enter the zipcode" minlength="6" maxlength="6" id="pin-code" name="pin" type="number" class="validate" required autocomplete="off">
+          <label for="pin-code">Pin Code <span style="color: red; font-size: 15px !important"">*</span></label>
         </div>
       </div>
-      <div class="form-row">
-        <div class="form-holder">
-          <label for="phone" class="toplabel">Phone Number</label>
-          <i class="zmdi zmdi-smartphone-android"></i>
-          <input type="tel" name="phone" id="phone" placeholder="" >
+      <div class="row">
+        <div class="input-field col s6">
+          <input  placeholder="Please enter the mobile number" name="phone" id="phone" type="tel" class="validate"  autocomplete="off">
+          <label for="phone">Mobile Number</label>
         </div>
-        <div class="form-holder">
-          <label for="office" class="toplabel">Office Number *</label>
-          <i class="zmdi zmdi-phone"></i>
-          <input type="tel" id="office" name="office" placeholder="" required>
-          <span></span>
+        <div class="input-field col s6">
+          <input placeholder="Please enter the office number" id="office" name="office" type="tel" class="validate" required>
+          <label for="office">Office Number<span style="color: red; font-size: 15px !important"">*</span></label>
         </div>
-      </div>
-      <button type="button" name="next" class="next action-button">Next</button>
+      </div>  
+  
+      <button type="button" name="next" class="next action-button waves-effect waves-light">Next</button>
       <h1 class="footer"> © 2019 &nbsp; SKSLtechnologies. All rights reserved.</h1>
-    </fieldset>
+    </fieldset> 
     <fieldset>
       <h2 class="fs-title">More about the Organization</h2>
       <h3 class="fs-subtitle">This is Step 2</h3>
-      <div class="form-row">
-        <div class="form-holder">
-          <label for="md-name" class="toplabel">MD's Name</label>
-          <i class="zmdi zmdi-account"></i>
-          <input type="text" id="md-name" name="md_name" placeholder="">
+      <div class="row">
+        <div class="input-field col s6">
+          <input minlength="5" id="md-name" name="md_name" type="text" autocomplete="off">
+          <label for="md-name">Managing Director's Name</label>
+          <span></span>
         </div>
-        <div class="form-holder">
-          <label for="dir-name" class="toplabel">Directors' Name</label>
-          <i class="zmdi zmdi-account"></i>
-          <input type="text" id="dir-name" name="director_name">
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="form-holder">
-          <label for="part-name" class="toplabel">Partner's Name</label> <i class="zmdi zmdi-account"></i>
-          <input type="text" id="part-name" name="partner_name" placeholder="">
-        </div>
-        <div class="form-holder">
-          <label for="prop-name" class="toplabel">Proprietor's Name</label> <i class="zmdi zmdi-account"></i>
-          <input type="text" id="prop-name" name="prop_name" placeholder="">
+        <div class="input-field col s6">
+          <input minlength="5" id="dir-name" name="director_name" type="text" autocomplete="off">
+          <label for="dir-name">Directors' Name</label>
         </div>
       </div>
-      <div class="form-row">
-        <div class="form-holder">
-          <div class="custom-select">
-            <select class="floating-label-field floating-label-field--s3" id="org-type" name="org_type">
-              <option value="0"> - </option>
-              <option value="Ltd.">Ltd.</option>
-              <option value="Pvt. Ltd.">Pvt. Ltd.</option>
-              <option value="Partnership">Partnership</option>
-              <option value="Others">Others</option>
-            </select>
-            <label for="org-type" class="floating-label">Organization Type</label>
-          </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input minlength="5" id="part-name" name="partner_name" type="text" autocomplete="off">
+          <label for="part-name">Partner's Name</label>
+          <span></span>
         </div>
-        <div class="form-holder">
-          <div class="custom-select">
-            <select class="floating-label-field floating-label-field--s3" id="member" name="member">
-              <option value="0"> - </option>
-              <option value="Yes">Yes</option>
-              <option value="No">No</option>
-            </select>
-            <label for="member" class="floating-label">Are you a member of BAI?</label>
-          </div>
+        <div class="input-field col s6">
+          <input minlength="5" id="prop-name" name="prop_name" type="text" autocomplete="off">
+          <label for="prop-name">Proprietor's Name</label>
         </div>
       </div>
-      <h3 class="questions">Please select all the types of equipments you are using:</h3>
-      <div class="form-row">
-        <label class="form-holder container">Excavators
-          <input type="checkbox" name="equipments" value="Excavators">
-          <span class="checkmark"></span>
-        </label>
-        <label class="form-holder container">Hydra
-          <input type="checkbox" name="equipments" value="25/10 Ton Dumper">
-          <span class="checkmark"></span>
-        </label>
-        <label class="form-holder container">25/10 Ton Dumper
-          <input type="checkbox" name="equipments" value="25/10 Ton Dumper">
-          <span class="checkmark"></span>
-        </label>
-      </div>
-      <div class="form-row">
-        <label class="form-holder container">100/200 Ton Crane
-          <input type="checkbox" name="equipments" value="100/200 Ton Crane">
-          <span class="checkmark"></span>
-        </label>
-        <label class="form-holder container">Bulldozer
-          <input type="checkbox" name="equipments" value="Bulldozer">
-          <span class="checkmark"></span>
-        </label>
-        <label class="form-holder container">Batching Plant
-          <input type="checkbox" name="equipments" value="Batching Plant">
-          <span class="checkmark"></span>
-        </label>
-      </div>
-      <div class="form-row">
-        <label class="form-holder container">Welding Generator
-          <input type="checkbox" name="equipments" value="Welding Generator">
-          <span class="checkmark"></span>
-        </label>
-        <label class="form-holder container">Concrete Mixture
-          <input type="checkbox" name="equipments" value="Concrete Mixture">
-          <span class="checkmark"></span>
-        </label>
-        <label class="form-holder container">Other Equipment
-          <input type="checkbox" name="equipments" value="Other Equipment">
-          <span class="checkmark"></span>
-        </label>
-      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <select id="org-type" name="org_type" class="org_type">
+            <option value="" disabled selected>Choose your option</option>
+            <option value="Limited">Limited</option>
+            <option value="Private Limited">Private Limited</option>
+            <option value="Partnership">Partnership</option>
+            <option value="Others">Others</option>
+          </select>
+          <label>Organization Type</label>
+        </div>
 
-      <button type="button" name="previous" class="previous action-button">Previous</button>
-      <button type="button" name="next" class="next action-button">Next</button>
-      <h1 class="footer"> © 2019 &nbsp; SKSLtechnologies. All rights reserved.</h1>
-    </fieldset>
+        <div class="input-field col s6">
+          <select id="member" name="member" class="member">
+            <option value="" disabled selected>Choose your option</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+          <label>Are you a member of BAI?</label>
+        </div>
+      </div>
+      <span id="orgSpan">
+        <div class="row">
+          <div class="input-field col s12">
+            <input type="text" minlength="5" id="org-type" name="org-type" required autocomplete="off">
+            <label for="org-type">Please enter the type of organization <span
+                style="color: red; font-size: 15px !important"">*</span>
+            </label>
+          </div>
+        </div>
+      </span>
+      <span id="bai_code">
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input type="text" minlength="4" id="bai-code" name="bai-code" required autocomplete="off">
+                    <label for="bai-code">Please enter the BAI code <span style="color: red; font-size: 15px !important"">*</span>
+              </label>
+            </div>
+          </div>
+        </span>
+
+      <h3 class=" questions">&nbsp;&nbsp;&nbsp;&nbsp;Please select all the types of equipments you are using:</h3>
+
+                        <div class="row">
+                          <div class="input-field col s3">
+                            <div>
+                              <input type="checkbox" name="equipments" id="excavators" value="Excavators">
+                              <label for="excavators">&nbsp;Excavator</label>
+                            </div>
+                          </div>
+                          <div class="input-field col s4">
+                            <div>
+                              <input type="checkbox" name="equipments" id="concrete_mixer" value="Concrete Mixer">
+                              <label for="concrete_mixer" style="padding-right:38px;">Concrete Mixer</label>
+                            </div>
+                          </div>
+                          <div class="input-field col s4">
+                            <div>
+                              <input type="checkbox" name="equipments" id="batch" value="Batching Plant">
+                              <label for="batch">Batching Plant</label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="input-field col s3">
+                            <div>
+                              <input type="checkbox" name="equipments" id="Bulldozer" value="Bulldozer">
+                              <label for="Bulldozer" style="padding-right:5px;">Bulldozer</label>
+                            </div>
+                          </div>
+                          <div class="input-field col s4">
+                            <div>
+                              <input type="checkbox" name="equipments" id="smallDumper" value="25/10 Ton Dumper">
+                              <label for="smallDumper" style="padding-right:18px;">25/10 Ton Dumper</label>
+                            </div>
+                          </div>
+                          <div class="input-field col s5">
+                            <div>
+                              <input type="checkbox" name="equipments" id="weldingGenerator" value="Batching Plant">
+                              <label for="weldingGenerator" style="padding-right:22px;">Welding Generator</label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="input-field col s3">
+                            <div>
+                              <input type="checkbox" name="equipments" id="hydra" value="Hydra">
+                              <label for="hydra" style="padding-right:25px;">Hydra</label>
+                            </div>
+                          </div>
+                          <div class="input-field col s4">
+                            <div>
+                              <input type="checkbox" name="equipments" id="smallCrane" value="100/200 Ton Crane">
+                              <label for="smallCrane" style="padding-right:12px;">100/200 Ton Crane</label>
+                            </div>
+                          </div>
+                          <div class="input-field col s5">
+                            <div>
+                              <input type="checkbox" name="equipments" id="other" value="Other Equipments">
+                              <label for="other" style="padding-right:30px;">Other Equipments</label>
+                            </div>
+                          </div>
+                        </div>
+                        <button type="button" name="previous" class="previous action-button">Previous</button>
+                        <button type="button" name="next"
+                          class="next action-button waves-effect waves-light">Next</button>
+                        <h1 class="footer"> © 2019 &nbsp; SKSLtechnologies. All rights reserved.</h1>
+    </fieldset> 
     <fieldset>
       <h2 class="fs-title">More about the Projects</h2>
       <h3 class="fs-subtitle">This is Step 3</h3>
-      <div class="form-row">
-        <div class="form-holder">
-          <div class="custom-select">
-            <select class="floating-label-field floating-label-field--s3" id="clients" name="clients">
-              <option value="0"> - </option>
-              <option value="CIL">CIL</option>
-              <option value="NTPC">NTPC</option>
-              <option value="NTPC">NTPC</option>
-              <option value="ONGC">ONGC</option>
-              <option value="NHAI">NHAI</option>
-              <option value="AAI">AAI</option>
-              <option value="Railways">Railways</option>
-              <option value="State PWD">State PWD</option>
-              <option value="State Govt.">State Govt.</option>
-              <option value="State PSU">State PSU</option>
-              <option value="Central PSU">Central PSU</option>
-              <option value="Private">Private</option>
-              <option value="Others">Others</option>
-            </select>
-            <label for="clients" class="floating-label">Name of the Clients</label>
-          </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <select id="clients" name="clients" multiple >
+            <option value="" disabled selected>Choose your option(s)</option>
+            <option value="CIL">CIL</option>
+            <option value="NTPC">NTPC</option>
+            <option value="ONGC">ONGC</option>
+            <option value="NHAI">NHAI</option>
+            <option value="AAI">AAI</option>
+            <option value="Railways">Railways</option>
+            <option value="State PWD">State PWD</option>
+            <option value="State Govt.">State Govt.</option>
+            <option value="State PSU">State PSU</option>
+            <option value="Central PSU">Central PSU</option>
+            <option value="Private">Private</option>
+            <option value="Others">Others</option>
+          </select>
+          <label>Name of the Clients</label>
         </div>
-        <div class="form-holder">
-          <div class="custom-select">
-            <select class="floating-label-field floating-label-field--s3" id="contract" name="contract_type">
-              <option value="0"> - </option>
-              <option value="EPC Contract">EPC Contract</option>
-              <option value="Lumpsum Contract">Lumpsum Contract</option>
-            </select>
-            <label for="contract" class="floating-label">Contract Type</label>
-          </div>
+        <div class="input-field col s6">
+          <select id="contract" name="contract_type" class="contract_type">
+            <option value="" disabled selected>Choose your option</option>
+            <option value="EPC Contract">EPC Contract</option>
+            <option value="Lumpsum Contract">Lumpsum Contract</option>
+            <option value="Others">Others</option>
+          </select>
+          <label>Organization Type</label>
         </div>
       </div>
-      <div class="form-row-full">
-        <div class="form-holder">
-          <label for="largest-contract" class="toplabel">Single Largest Contract in the last 5 years (Rs.)</label>
-          <i class="zmdi zmdi-money"></i>
-          <input type="text" id="largest-contract" name="largest_contract" placeholder="">
+      <h3 class="questions">&nbsp;&nbsp;&nbsp;&nbsp;Yearly turnover for the last 3 years:</h3>
+      <div class="row"></div>
+      <div class="row">
+        <div class="input-field col s4">
+          <input placeholder="" id="18-19" name="18-19" type="text" autocomplete="off">
+          <label for="18-19">2018-2019</label>
+        </div>
+        <div class="input-field col s4">
+          <input placeholder="" id="17-18" name="17-18" type="text" autocomplete="off">
+          <label for="17-18">2017-2018</label>
+        </div>
+        <div class="input-field col s4">
+          <input placeholder="" id="16-17" name="16-17" type="text" autocomplete="off">
+          <label for="16-17">2016-2017</label>
         </div>
       </div>
-      <h3 class="questions">Yearly turnover for the last 3 years:</h3>
-      <div class="form-row">
-        <div class="form-holder">
-          <label for="18-19" class="toplabel">2018-2019</label>
-          <input type="text" id="18-19" name="one_year" placeholder="">
+      <div class="row">
+        <div class="input-field col s6">
+          <input placeholder="" id="largest_contract" name="largest_contract" type="number" autocomplete="off">
+          <label for="largest_contract">Single Largest Contract in the last 5 years </label>
         </div>
-        <div class="form-holder">
-          <label for="17-18" class="toplabel">2017-2018</label>
-          <input type="text" id="17-18" name="two_year" placeholder="">
+        <div class="input-field col s6">
+          <select id="work_nature" name="work_nature" multiple>
+            <option value="" disabled selected>Choose your option(s)</option>
+            <option value="Major Earthwork">Major Earthwork</option>
+            <option value="OB Removal">OB Removal</option>
+            <option value="Railway Embankment">Railway Embankment</option>
+            <option value="Dams">Dams</option>
+            <option value="Roads">Roads</option>
+            <option value="Culverts">Culverts</option>
+            <option value="Multistoried Buildings">Multistoried Buildings</option>
+            <option value="Mechanical Work">Mechanical Work</option>
+            <option value="Structural Steel Work">Structural Steel Work</option>
+            <option value="Electrical Work in Plants">Electrical Work in Plants</option>
+            <option value="Electrical in Residential">Electrical in Residential</option>
+            <option value="Design Engineering">Design Engineering</option>
+            <option value="Sheds/Workshops">Sheds/Workshops</option>
+            <option value="Piling Work">Piling Work</option>
+          </select>
+          <label>Please the nature of work</label>
         </div>
-        <div class="form-holder">
-          <label for="16-17" class="toplabel">2016-2017</label>
-          <input type="text" id="16-17" name="three_year" placeholder="">
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea id="credentials" class="materialize-textarea" maxlength="500" length="500"></textarea>
+          <label for="credentials">Credentials</label>
         </div>
       </div>
 
-      <h3 class="questions">Please the nature of work:</h3>
-      <div class="form-row">
-        <label class="form-holder container">Major Earthwork
-          <input type="checkbox" name="work_nature" value="Major Earthwork">
-          <span class="checkmark"></span>
-        </label>
-        <label class="form-holder container">OB Removal
-          <input type="checkbox" name="work_nature" value="OB Removal">
-          <span class="checkmark"></span>
-        </label>
-        <label class="form-holder container">Railway Embankment
-          <input type="checkbox" name="work_nature" value="Railway Embankment">
-          <span class="checkmark"></span>
-        </label>
-      </div>
-      <div class="form-row">
-        <label class="form-holder container">Dams
-          <input type="checkbox" type="checkbox" name="work_nature" value="Dams">
-          <span class="checkmark"></span>
-        </label>
-        <label class="form-holder container">Roads
-          <input type="checkbox" type="checkbox" name="work_nature" value="Roads">
-          <span class="checkmark"></span>
-        </label>
-        <label class="form-holder container">Culverts
-          <input type="checkbox" type="checkbox" name="work_nature" value="Culverts">
-          <span class="checkmark"></span>
-        </label>
-      </div>
-      <div class="form-row">
-        <label class="form-holder container">Bridges
-          <input type="checkbox" type="checkbox" name="work_nature" value="Bridges">
-          <span class="checkmark"></span>
-        </label>
-        <label class="form-holder container">Multistoried Buildings
-          <input type="checkbox" type="checkbox" name="work_nature" value="Multistoried Buildings">
-          <span class="checkmark"></span>
-        </label>
-        <label class="form-holder container">Mechanical Work
-          <input type="checkbox" type="checkbox" name="work_nature" value="Mechanical Work">
-          <span class="checkmark"></span>
-        </label>
-      </div>
-      <div class="form-row">
-        <label class="form-holder container">Structural Steel Work
-          <input type="checkbox" type="checkbox" name="work_nature" value="Structural Steel Work">
-          <span class="checkmark"></span>
-        </label>
-        <label class="form-holder container">Electrical Work in Plants
-          <input type="checkbox" type="checkbox" name="work_nature" value="Electrical Work in Plants">
-          <span class="checkmark"></span>
-        </label>
-        <label class="form-holder container">Design Engineering
-          <input type="checkbox" type="checkbox" name="work_nature" value="Design Engineering">
-          <span class="checkmark"></span>
-        </label>
-      </div>
-      <div class="form-row">
-        <label class="form-holder container">Electrical in Residential
-          <input type="checkbox" type="checkbox" name="work_nature" value="Electrical in Residential">
-          <span class="checkmark"></span>
-        </label>
-        <label class="form-holder container">Sheds/Workshops
-          <input type="checkbox" type="checkbox" name="work_nature" value="Sheds/Workshops">
-          <span class="checkmark"></span>
-        </label>
-        <label class="form-holder container">Piling Work
-          <input type="checkbox" type="checkbox" name="work_nature" value="Piling Work">
-          <span class="checkmark"></span>
-        </label>
-      </div>
-
-      <div class="form-row-full">
-        <div class="form-holder">
-          <label for="credentials" class="toplabel">Credentials</label>
-          <i class="zmdi zmdi-question"></i>
-          <input type="text" id="credentials" name="credentials" placeholder="">
-        </div>
-      </div> 
-
-      <button type="button" name="previous" class="previous action-button">Previous</button>
-      <button type="submit" class="action-button" value="Submit">Submit</button>
+      <button type=" button" name="previous" class="previous action-button ">Previous</button>
+      <button type="submit" class="action-button waves-effect waves-light" value="Submit">Submit</button>
       <h1 class="footer"> © 2019 &nbsp;SKSLtechnologies. All rights reserved.</h1>
     </fieldset>
   </form>
 
 
-
-  <script src='../js/jquery.min.js'></script>
   <script src='../js/jquery.easing.min.js'></script>
 
 

@@ -29,11 +29,9 @@ body {
 	font-family: "Lato-Regular";
 	font-size: 14px;
 	margin: 0;
-	color: #999;
+	color: black;
 	background-size: cover;
 	display: flex;
-	align-items: center;
-	justify-content: center;
 }
 
 /*form styles*/
@@ -57,7 +55,7 @@ body {
 	width: 80%;
 	margin: 0 0 10% 10%;
 	position: relative;
-	height:auto;
+	height: auto;
 }
 
 /*Hide all except first fieldset*/
@@ -66,29 +64,119 @@ body {
 }
 
 /*inputs*/
-#msform input {
-	padding: 15px;
-	border: 1px solid #ccc;
-	border-radius: 3px;
-	margin-bottom: 2px;
+#msform input{
+	padding: 0 5px 0 5px;
 	width: 100%;
 	box-sizing: border-box;
 	font-family: "Lato-Regular";
-	font-size: 14px;
+	font-size: 15px !important;
 	z-index: 0;
+	border-radius: 2px;
+	border-bottom: 1px solid transparent;
+	box-shadow: 0 1px 0 0 #000;
+	background-color: white !important;
+	margin: 0 0 5px 0 !important;
+	/* color: #666 !important; */
 }
 
-.toplabel {
-	float: left;
-	background: #FFFFFF;
-	height: 14px;
-	padding: 2px 5px 2px 5px;
-	color: black;
-	font-size: 14px;
+.select-wrapper span.caret {
+	color: #000 !important;
+}
+
+
+label {
+	color: #000 !important;
+	font-size: 14px !important;
+	text-align: left !important;
+}
+
+.questions {
 	font-family: "Lato-Regular";
-	z-index: 2147483647;
-	transform: translate(0, 8px) scale(.9);
-	margin-top: -10px;
+	font-size: 14px;
+	font-weight: bolder !important;
+	color: black;
+	text-align: left;
+	margin-bottom: -2px;
+
+}
+
+#orgSpan {
+	display: none;
+}
+
+#bai_code {
+	display: none;
+}
+
+
+/* valid color */
+.input-field input[type=text].valid,
+.input-field input[type=email].valid,
+.input-field input[type=number].valid,
+.input-field textarea.valid,
+.input-field input[type=url].valid,
+.input-field input[type=tel].valid {
+	border-bottom: 1px solid #000;
+	box-shadow: 0 1px 0 0 #000;
+	color: #27AE60;
+	margin: 0 0 12px 0 !important;
+}
+
+
+input:focus,
+textarea:focus{
+	border-bottom: 1px solid rgb(38, 163, 38);
+	box-shadow: 0 3px 0 0 rgb(38, 163, 38) !important;
+}
+
+input:not(focus),
+textarea:not(focus) {
+	border-bottom: 1px solid black;
+	box-shadow: 0 2px 0 0 black !important;
+}
+
+form .error {
+	color: rgb(228, 4, 4) !important;
+	margin-top: -1px !important;
+	font-size: 12px;
+}
+
+.dropdown-content li:hover {
+	background-color: white !important;
+	color: #000 !important;
+}
+
+.dropdown-content li.active,
+.dropdown-content li.active.selected {
+	background-color: white !important;
+}
+
+.select-wrapper input.select-dropdown {
+	margin-top: 10px !important;
+	padding-right: 20px !important;
+	color: #666 !important;
+}
+
+.dropdown-content li {
+	background: orange !important;
+	color: black !important;
+}
+
+ul.dropdown-content.select-dropdown li span {
+	color: #000;
+}
+
+.input-field .prefix.active {
+	color: #000 !important;
+}
+
+.dropdown-content li>a,
+.dropdown-content li>span {
+	color: #000 !important;
+}
+
+.autocomplete-content li .highlight {
+	color: red !important;
 }
 
 /*buttons*/
@@ -131,16 +219,9 @@ body {
 	font-weight: normal;
 	font-size: 13px;
 	color: rgb(160, 5, 57);
-	padding-bottom: 25px;
+	padding-bottom: 2px;
 }
 
-.questions {
-	font-family: "Lato-Regular";
-	font-size: 14px;
-	color: rgb(155, 155, 155);
-	text-align: left;
-	margin-bottom: 20px;
-}
 
 /*progressbar*/
 #progressbar {
@@ -198,47 +279,6 @@ body {
 	color: white;
 }
 
-.form-row {
-	display: flex;
-	margin-bottom: 20px;
-}
-
-.form-row .form-holder {
-	width: 50%;
-	margin-right: 20px;
-}
-
-.form-row .form-holder:last-child {
-	margin-right: 0;
-}
-
-
-.form-row-full {
-	display: flex;
-	margin-bottom: 20px;
-}
-
-.form-row-full .form-holder {
-	width: 100%;
-	margin-right: 20px;
-}
-
-.form-row-full .form-holder:last-child {
-	margin-right: 0;
-}
-
-.form-holder {
-	position: relative;
-}
-
-.form-holder i {
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
-	right: 20px;
-	font-size: 16px;
-}
-
 .container {
 	display: block;
 	position: relative;
@@ -253,169 +293,20 @@ body {
 	margin-bottom: 5px;
 }
 
-/* Hide the browser's default checkbox */
-.container input {
-	position: relative;
-	opacity: 0;
-	cursor: pointer;
-	height: 0;
-	width: 0;
-}
-
-/* Create a custom checkbox */
-.checkmark {
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 25px;
-	width: 25px;
-	background-color: #666;
-}
-
-.container:hover input~.checkmark {
-	background-color: orange;
-}
-
-.container:hover {
-	background-color: rgba(255, 166, 0, 0.459);
-	color: #666;
-}
-
-/* When the checkbox is checked, add a orange background */
-.container input:checked~.checkmark {
-	background-color: orange;
-}
-
-
-/* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
-	content: "";
-	position: relative;
-	display: none;
-}
-
-/* Show the checkmark when checked */
-.container input:checked~.checkmark:after {
-	display: block;
-}
-
-.container .checkmark:after {
-	left: 9px;
-	top: 5px;
-	width: 5px;
-	height: 10px;
-	border: solid white;
-	border-width: 0 3px 3px 0;
-	-webkit-transform: rotate(45deg);
-	-ms-transform: rotate(45deg);
-	transform: rotate(45deg);
-}
-
-.custom-select {
-	color: #999;
-	font-family: "Lato-Regular";
-	font-size: 14px;
-	position: relative;
-	background: white;
-	margin-right: 20px;
-	width: 100%;
-	border: 1px solid #c2c0c0;
-	border-radius: 3px;
-	height: 40px;
-	top: 50%;
-	transform: translateY(-50%);
-	/* right: 20px; */
-	z-index: 100;
-}
-
-.custom-select select {
-	display: none;
-}
-
-
-.select-selected {
-	color: #999;
-	padding: 10px;
-	cursor: pointer;
-
-}
-
-.select-items div {
-	color: white;
-	padding: 8px 16px;
-	border-bottom: 1px solid transparent;
-	border-color: white;
-	cursor: pointer;
-}
-
-.select-items {
-	position: absolute;
-	background-color: orange;
-	top: 100%;
-	left: 0;
-	right: 0;
-}
-
-/* Hide the items when the select box is closed: */
-.select-hide {
-	display: none;
-}
-
-.select-items div:hover,
-.same-as-selected {
-	background-color: rgba(0, 0, 0, 0.1);
-}
-
-
-.floating-label-field--s3+.floating-label {
-	position: absolute;
-	top: .45em;
-	left: .40em;
-	display: inline-block;
-	width: auto;
-	margin: 0;
-	padding: .75em;
-	color: rgb(161, 159, 159);
-}
-
-.floating-label-field--s3:focus+.floating-label,
-.floating-label-field--s3:not(:placeholder-shown)+.floating-label {
-	z-index: 1;
-	padding: .75em;
-	transform: translate(0, -2em) scale(.9);
-	color: black;
-	background-color: white;
-}
-
 .footer {
 	font-family: "Lato-Bold";
 	font-size: 14px;
 	color: #222;
 	position: relative;
 	background: #fff;
-	left:50%;
+	left: 50%;
 	bottom: 5%;
 	transform: translateX(-50%);
 	white-space: nowrap;
-	padding-top:18px;
+	padding-top: 18px;
 }
 
-input:invalid {
-	background: white;
-}
-input[type=email]:invalid {
-    background: white;
-}
-input:focus:invalid + span::before { 
-	content: "Please fill out this field";
-	display: inline-block;
-	color: red;
-	font-size: 12px;
-}
 
-input:focus:invalid {
-	box-shadow: none;
-}
 
 
 
@@ -432,22 +323,6 @@ input:focus:invalid {
 		height: auto;
 	}
 
-	.form-row {
-		display: block;
-	}
-
-	.form-row .form-holder {
-		width: 100%;
-		margin-right: 0;
-		margin-bottom: 25px;
-	}
-
-	.select-selected {
-		color: #999;
-		padding: 10px 20px;
-		cursor: pointer;
-	}
-
 	.container {
 		margin: 0px;
 		height: 25px;
@@ -458,6 +333,6 @@ input:focus:invalid {
 		font-size: 10px;
 		font-family: "Lato-Regular";
 	}
-	
-	
+
+
 }
