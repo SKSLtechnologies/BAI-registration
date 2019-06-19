@@ -377,12 +377,11 @@ ul.dropdown-content.select-dropdown li span {
 		padding: 0px !important;
 		width: 100%;
 		border:0;
-		/* box-sizing: border-box;
-		border-radius: 2px;
-		border-bottom: none;
-		box-shadow: 0 0px 0 0 #000;
-		background-color: white !important; */
 		margin-bottom: 15px !important;
+	}
+
+	textarea {
+		margin-bottom: -10px !important;
 	}
 	
 
