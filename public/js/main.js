@@ -35,13 +35,12 @@ var left, opacity, scale; //fieldset properties which we will animate
 var animating; //flag to prevent quick multi-click glitches
 
 $(".next").click(function () {
+  if ($('#city').val() == "" || $('#state').val() == "" || $('#address').val() == "" ||
+    $('#contractor-name').val() == "" || $('#pin-code').val() == "" || $('#email').val() == "" ||
+    $('#office').val() == "") {
 
-  // if ($('#city').val() == "" || $('#state').val() == "" || $('#address').val() == "" ||
-  //   $('#contractor-name').val() == "" || $('#pin-code').val() == "" || $('#email').val() == "" ||
-  //   $('#office').val() == "") {
-
-  //   alert("Please fill out required fields to proceed. (*)")
-  // } else {
+    alert("Please fill out required fields to proceed. (*)")
+  } else {
     if (animating) return false;
     animating = true;
 
@@ -74,8 +73,7 @@ $(".next").click(function () {
       },
       easing: 'easeInQuad'
     });
-  // }
-
+  }
 });
 
 $(".previous").click(function () {
