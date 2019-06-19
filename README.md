@@ -4,27 +4,14 @@ BAI registration and table
 
 ### To do:
 1. For mobiles
-    - Check background :poop:
-    - Check transition :poop:
-    - Check buttons on iPhone :poop:
-    - Single Contract Value :poop:
+   
 
 2. Front-end
     - Form
         - Add autofocus :monkey:
-        - Add inline validation :snake:
-        - Add multi-select (clients)
-        - Grid select + check (equipments)
-        - Add favicons :horse:
-        - Add GST, Aadhar ID, etc. 
-        - Add select for states :boar:
-        - Clean out HTML/CSS
-        - Mandatory Fields :pig:
-        - "Directors' Names" :frog:
-        - Add input tel for phone/mobile - https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/tel :cow:
-        - Once submitted, a modal pops for success of submission - "You have been successfully registered"
+        - Add GST, Aadhar ID, etc.
     - Homepage 
-        - Split screen for Registration and Member List - https://codepen.io/facundocorradini/pen/PEKBGy :sheep:
+
     - Member List - https://codepen.io/azamatms/full/ZGwOMM
         - S.no 
         - Contractor's Name :dog:
