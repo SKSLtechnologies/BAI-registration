@@ -17,9 +17,6 @@
   <script src="../js/materialize.min.js"></script>
   <script src="../js/validate.min.js"></script>
 
-  <!-- <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css'> -->
-
-
 </head>
 
 <body>
@@ -34,7 +31,7 @@
     </ul>
     <!-- fieldsets -->
 
-    <fieldset >
+     <fieldset >
       <h2 class="fs-title">Basic Details</h2>
       <h3 class="fs-subtitle">This is step 1</h3>
 
@@ -92,7 +89,7 @@
   
       <button type="button" name="next" class="next action-button waves-effect waves-light">Next</button>
       <h1 class="footer"> © 2019 &nbsp; SKSLtechnologies. All rights reserved.</h1>
-    </fieldset> 
+    </fieldset>  
     <fieldset>
       <h2 class="fs-title">More about the Organization</h2>
       <h3 class="fs-subtitle">This is Step 2</h3>
@@ -157,10 +154,10 @@
               </label>
             </div>
           </div>
-        </span>
+        </span> 
 
-        <h3 class=" questions">&nbsp;&nbsp;&nbsp;&nbsp;Please select all the types of equipments:</h3>
-
+      <h3 class=" questions">&nbsp;&nbsp;&nbsp;&nbsp;Please select all the types of equipments:</h3>
+      <span id="equipmentSpan">
         <div class="row">
           <div class="input-field col s3">
             <div>
@@ -222,9 +219,29 @@
             </div>
           </div>
         </div>
-        <button type="button" name="previous" class="previous action-button">Previous</button>
-        <button type="button" name="next" class="next action-button waves-effect waves-light">Next</button>
-        <h1 class="footer"> © 2019 &nbsp; SKSLtechnologies. All rights reserved.</h1>
+      </span>
+      <span id="selectAllEquip">
+        <div class="row">
+          <div class="input-field col s6">
+            <select id="equipments" name="equipments" multiple>
+              <option value="" disabled selected>Choose your option(s)</option>
+              <option value="Excavators">Excavators</option>
+              <option value="Concrete Mixer">Concrete Mixer</option>
+              <option value="100/200 Ton Crane">100/200 Ton Crane</option>
+              <option value="25/10 Ton Dumper">25/10 Ton Dumper</option>
+              <option value="Hydra">Hydra</option>
+              <option value="Welding Generator">Welding Generator</option>
+              <option value="Bulldozer">Bulldozer</option>
+              <option value="Batching Plant">Batching Plant</option>
+              <option value="Others">Others</option>
+            </select>
+            <label>Types of Equipments</label>
+          </div>
+        </div>
+      </span>
+      <button type="button" name="previous" class="previous action-button">Previous</button>
+      <button type="button" name="next" class="next action-button waves-effect waves-light">Next</button>
+      <h1 class="footer"> © 2019 &nbsp; SKSLtechnologies. All rights reserved.</h1>
     </fieldset>
     <fieldset>
       <h2 class="fs-title">More about the Projects</h2>
@@ -310,7 +327,7 @@
       <button type=" button" name="previous" class="previous action-button ">Previous</button>
       <button type="submit" class="action-button waves-effect waves-light" value="Submit">Submit</button>
       <h1 class="footer"> © 2019 &nbsp;SKSLtechnologies. All rights reserved.</h1>
-    </fieldset>
+    </fieldset> 
   </form>
 
 

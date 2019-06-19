@@ -16,18 +16,32 @@ $("select.member").change(function () {
   }
 });
 
+function myFunction(x) {
+  if (x.matches) { // If media query matches
+    $('#equipmentSpan').hide()
+    $('#selectAllEquip').show()
+  } else {
+    $('#equipmentSpan').show()
+    $('#selectAllEquip').hide()
+  }
+}
+
+var x = window.matchMedia("(max-width: 850px)")
+myFunction(x) // Call listener function at run time
+x.addListener(myFunction) // Attach listener function on state changes
+
 var current_fs, next_fs, previous_fs; //fieldsets
 var left, opacity, scale; //fieldset properties which we will animate
 var animating; //flag to prevent quick multi-click glitches
 
 $(".next").click(function () {
 
-  if ($('#city').val() == "" || $('#state').val() == "" || $('#address').val() == "" ||
-    $('#contractor-name').val() == "" || $('#pin-code').val() == "" || $('#email').val() == "" ||
-    $('#office').val() == "") {
+  // if ($('#city').val() == "" || $('#state').val() == "" || $('#address').val() == "" ||
+  //   $('#contractor-name').val() == "" || $('#pin-code').val() == "" || $('#email').val() == "" ||
+  //   $('#office').val() == "") {
 
-    alert("Please fill out required fields to proceed. (*)")
-  } else {
+  //   alert("Please fill out required fields to proceed. (*)")
+  // } else {
     if (animating) return false;
     animating = true;
 
@@ -60,7 +74,7 @@ $(".next").click(function () {
       },
       easing: 'easeInQuad'
     });
-  }
+  // }
 
 });
 
