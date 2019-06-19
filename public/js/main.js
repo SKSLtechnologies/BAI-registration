@@ -5,8 +5,8 @@ $("select.org_type").change(function () {
   } else {
     $('#orgSpan').hide()
   }
-
 });
+
 $("select.member").change(function () {
   var selectedOption = $(this).children("option:selected").val();
   if (selectedOption == "Yes") {
@@ -14,8 +14,8 @@ $("select.member").change(function () {
   } else {
     $('#bai_code').hide()
   }
-
 });
+
 var current_fs, next_fs, previous_fs; //fieldsets
 var left, opacity, scale; //fieldset properties which we will animate
 var animating; //flag to prevent quick multi-click glitches
