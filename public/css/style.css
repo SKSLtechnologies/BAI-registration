@@ -312,7 +312,7 @@ ul.dropdown-content.select-dropdown li span {
 
 @media (max-width: 767px) {
 	html {
-		background: #02241b;
+		background: #ffe600;
 		height: auto;
 		display: block;
 	}
@@ -334,5 +334,56 @@ ul.dropdown-content.select-dropdown li span {
 		font-family: "Lato-Regular";
 	}
 
+	.s6 {
+		width: 100% !important; 
+		margin-bottom: 15px;
+	}
+
+	.row {
+		margin-bottom: 0px !important;
+	}
+	
+	.s3 {
+		width: 100% !important; 
+		margin-bottom: 25px;
+	}
+
+	.s4 {
+		width: 100% !important; 
+		margin-bottom: 25px;
+	}
+
+	.excavators {
+		margin-right: 19px !important;
+	}
+	.concrete_mixer {
+		margin-right: -51px !important;
+	}
+	.batch {
+		margin-right: -6px !important;
+	}
+	.Bulldozer {
+		margin-right: 20px !important;
+	}
+	.smallDumper{
+		margin-right: -51px !important;
+	}
+	.weldingGenerator {
+		margin-left: 67px !important;
+	}
+	.hydra {
+		margin-right: 20px !important;
+	}
+	.smallCrane {
+		margin-right: -51px !important;
+	}
+	.other {
+		margin-left: 69px !important;
+		padding-bottom: 120px !important;
+	}
+	
+	h3 {
+		padding-bottom: 20px !important;
+	}
 
 }
