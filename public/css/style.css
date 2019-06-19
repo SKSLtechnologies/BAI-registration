@@ -382,7 +382,7 @@ ul.dropdown-content.select-dropdown li span {
 		border-bottom: none;
 		box-shadow: 0 0px 0 0 #000;
 		background-color: white !important; */
-		margin: 0 !important;
+		margin-bottom: 15px !important;
 	}
 	
 
