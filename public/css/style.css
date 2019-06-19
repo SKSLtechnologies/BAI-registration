@@ -322,7 +322,9 @@ ul.dropdown-content.select-dropdown li span {
 
 @media (max-width: 850px) {
 	html {
-		background: #ffe600;
+		/* background: #073a2d; */
+		background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 100%, transparent), url(../images/mobile-background.jpg);
+	background-size: cover;
 		height: auto;
 		display: block;
 	}
