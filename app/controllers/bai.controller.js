@@ -1,9 +1,10 @@
 const BAIinfo = require('../models/bai.model.js');
 const fs = require('fs');
- 
+const nodeMailer = require('nodemailer');
 
 // Create and Save a new member
 exports.create = (req, res) => {
+
     if (!req.body) {
         return res.status(400).send({
             message: "member can not be empty"
@@ -38,6 +39,54 @@ exports.create = (req, res) => {
         credentials: req.body.credentials || "N/A"
     });
 
+    async function trying() {
+        var registeration_no;
+        //find the total number of documents
+        await BAIinfo.countDocuments({}, function (err, count) {
+            registeration_no = count.toString();
+            switch (5 - registeration_no.length) {
+                case 4:
+                    registeration_no = '0000' + registeration_no;
+                    break;
+                case 3:
+                    registeration_no = '000' + registeration_no;
+                    break;
+                case 2:
+                    registeration_no = '00' + registeration_no;
+                    break;
+                case 1:
+                    registeration_no = '0' + registeration_no;
+            }
+        });
+
+        //send email with confirmation number
+        let transporter = nodeMailer.createTransport({
+            host: 'smtp.gmail.com',
+            port: 465,
+            secure: true,
+            auth: {
+                user: 'tech@sksl.in',
+                pass: 'SKSLtech@1234'
+            }
+        });
+
+        let mailOptions = {
+            from: '"SKSLtechnologies" <tech@sksl.in>', // sender address
+            to: req.body.email, // list of receivers
+            subject: 'BAI Registeration Number', // Subject line
+            html: 'Hello, <br><br>Thank you for submitting your form. Your BAI registeration number is <b>' + registeration_no + '.</b><br><br>Regards,<br>SKSLtechnologies' // html body
+        };
+
+        transporter.sendMail(mailOptions, (error, info) => {
+            if (error) {
+                return console.log(error);
+            }
+            console.log('Message %s sent: %s', info.messageId, info.response);
+        });
+    }
+
+    trying();
+
     // Save member in the database
     info.save()
         .then(data => {
@@ -53,8 +102,8 @@ exports.findAll = (req, res) => {
     BAIinfo.find()
         .then(members => {
             var mySJON = JSON.stringify(members)
-            fs.writeFileSync("writeMe.json", mySJON, function(err) {
-                if(err) {
+            fs.writeFileSync("writeMe.json", mySJON, function (err) {
+                if (err) {
                     return console.log(err);
                 }
                 console.log("The file was saved!");
@@ -83,13 +132,13 @@ exports.search = (req, res) => {
         }
     }
     BAIinfo.find(query).then(function (data) {
-            var mySJON = JSON.stringify(data)
-            fs.writeFileSync("writeMe.json", mySJON, function(err) {
-                if(err) {
-                    return console.log(err);
-                }
-                console.log("The file was saved!");
-            });
+        var mySJON = JSON.stringify(data)
+        fs.writeFileSync("writeMe.json", mySJON, function (err) {
+            if (err) {
+                return console.log(err);
+            }
+            console.log("The file was saved!");
+        });
         res.redirect('/list')
     }).catch(function (err) {
         res.status(500).send({
