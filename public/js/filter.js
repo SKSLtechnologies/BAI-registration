@@ -1,5 +1,6 @@
 
 $(".back").click(function () {
+    localStorage.setItem("on_load_counter", 0)
     window.location.replace("/list");
 });
 $('select').material_select();
