@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BAI Registeration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- MATERIAL DESIGN ICONIC FONT -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- STYLE CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel='shortcut icon' href='../images/favicon.ico' type='image/png' />
+    <link rel="stylesheet" href="../css/materialize.min.css">
+
+    <script src='../js/jquery.min.js'></script>
+    <script src="../js/materialize.min.js"></script>
+
+</head>
+
+<body>
+
+    <!-- multistep form -->
+    <form id="msform" method="POST" action="/search">
+        <fieldset>
+            <h2 class="fs-title">Filter Details</h2>
+            <h3 class="fs-subtitle">Please select the filter options</h3>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input placeholder="Please enter the state" type="text" id="state" name="state"
+                        class="autocompleteState validate" autocomplete="off">
+                    <label for="state">State</label>
+                </div>
+                <div class=" input-field col s6">
+                    <input placeholder="Please enter the city" id="city" name="city" type="text" class="validate"
+                        autocomplete="off">
+                    <label for="city">City</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <select id="org-type" name="org_type" class="org_type">
+                        <option value="" disabled selected>Choose your option</option>
+                        <option value="Limited">Limited</option>
+                        <option value="Private Limited">Private Limited</option>
+                        <option value="Partnership">Partnership</option>
+                        <option value="Others">Others</option>
+                    </select>
+                    <label>Organization Type</label>
+                </div>
+                <div class="input-field col s6">
+                    <select id="member" name="member" class="member">
+                        <option value="" disabled selected>Choose your option</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                    <label>Member of BAI</label>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <select id="clients" name="clients" multiple>
+                        <option value="" disabled selected>Choose your option(s)</option>
+                        <option value="CIL">CIL</option>
+                        <option value="NTPC">NTPC</option>
+                        <option value="ONGC">ONGC</option>
+                        <option value="NHAI">NHAI</option>
+                        <option value="AAI">AAI</option>
+                        <option value="Railways">Railways</option>
+                        <option value="State PWD">State PWD</option>
+                        <option value="State Govt.">State Govt.</option>
+                        <option value="State PSU">State PSU</option>
+                        <option value="Central PSU">Central PSU</option>
+                        <option value="Private">Private</option>
+                        <option value="Others">Others</option>
+                    </select>
+                    <label>Name of the Clients</label>
+                </div>
+                <div class="input-field col s6">
+                    <select id="member" name="member" class="member">
+                        <option value="" disabled selected>Choose your option</option>
+                        <option value="turnover1">Less than 1 L</option>
+                        <option value="turnover2">1 L - 50 L</option>
+                        <option value="turnover3">50 L - 1 Cr. </option>
+                        <option value="turnover4">1 Cr. - 100 Cr. </option>
+                        <option value="turnover5">100 Cr. - 500 Cr. </option>
+                        <option value="turnover6">More than 500 Cr. </option>
+                    </select>
+                    <label>Turnover for the largest single project</label>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <select id="work_nature" name="work_nature" multiple>
+                        <option value="" disabled selected>Choose your option(s)</option>
+                        <option value="Major Earthwork">Major Earthwork</option>
+                        <option value="OB Removal">OB Removal</option>
+                        <option value="Railway Embankment">Railway Embankment</option>
+                        <option value="Dams">Dams</option>
+                        <option value="Roads">Roads</option>
+                        <option value="Culverts">Culverts</option>
+                        <option value="Multistoried Buildings">Multistoried Buildings</option>
+                        <option value="Mechanical Work">Mechanical Work</option>
+                        <option value="Structural Steel Work">Structural Steel Work</option>
+                        <option value="Electrical Work in Plants">Electrical Work in Plants</option>
+                        <option value="Electrical in Residential">Electrical in Residential</option>
+                        <option value="Design Engineering">Design Engineering</option>
+                        <option value="Sheds/Workshops">Sheds/Workshops</option>
+                        <option value="Piling Work">Piling Work</option>
+                    </select>
+                    <label>Please the nature of work</label>
+                </div>
+
+                <div class="input-field col s6">
+                    <select id="equipments" name="equipments" multiple>
+                        <option value="" disabled selected>Choose your option(s)</option>
+                        <option value="Excavators">Excavators</option>
+                        <option value="Concrete Mixer">Concrete Mixer</option>
+                        <option value="100/200 Ton Crane">100/200 Ton Crane</option>
+                        <option value="25/10 Ton Dumper">25/10 Ton Dumper</option>
+                        <option value="Hydra">Hydra</option>
+                        <option value="Welding Generator">Welding Generator</option>
+                        <option value="Bulldozer">Bulldozer</option>
+                        <option value="Batching Plant">Batching Plant</option>
+                        <option value="Others">Others</option>
+                    </select>
+                    <label>Types of Equipments</label>
+                </div>
+                <div class="row"></div>
+                <button type="button" name="home" class="back action-button waves-effect waves-light">Back</button>
+                <button type="submit" class="action-button waves-effect waves-light" value="Submit">Submit</button>
+                <h1 class="footer"> © 2019 &nbsp; SKSLtechnologies. All rights reserved.</h1>
+        </fieldset>
+    </form>
+    <script src="../js/filter.js"></script>
+
+</body>
+
+
+</html>

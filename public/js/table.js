@@ -9,20 +9,13 @@ $(document).ready(function () {
   localStorage.setItem("on_load_counter", n);
 
   nums = n.toString().split('').map(Number);
-  var modal = document.getElementById('myModal');
-  var span = document.getElementsByClassName("close")[0];
-  $(".filter").click(function () {
-    modal.style.display = "block";
-  });
-  span.onclick = function () {
-    modal.style.display = "none";
-  }
 
-  window.onclick = function (event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  }
+   $(".filter").click(function () {
+    // alert("Hello!")
+    window.location.replace("/filter");
+  });
+
+
 
   if (n == 1) {
     var url = "/members"

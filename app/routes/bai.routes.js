@@ -33,5 +33,9 @@ module.exports = (app) => {
 
     // Create a new member
     app.post('/search', BAIinfo.search);
+    app.get('/filter', function (req, res) {
+        res.sendFile(path.join(__dirname + '../../../public/views/filter.html'));
+    });
+
 
 }
