@@ -217,11 +217,6 @@ thead tr th {
     display: none;
   }
 
-  .copyright {
-    position: relative;
-    /* top: 84%; */
-  }
-
   #mytable th {
     font-family: "Lato-Regular";
     font-size: 2%;

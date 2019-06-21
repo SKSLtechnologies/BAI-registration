@@ -393,5 +393,9 @@ ul.dropdown-content.select-dropdown li span {
 	textarea {
 		margin-bottom: -5px !important;
 	}
+	.hide-on-mobile {
+		display: none;
+	  }
+	
 
 }
