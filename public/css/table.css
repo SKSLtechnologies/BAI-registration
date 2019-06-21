@@ -193,7 +193,6 @@ thead tr th {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.103) 100%, transparent), url(../images/mobile-table.jpg);
     background-size: cover;
 		height: auto;
-    /* max-height: 800px !important; */
   }
 
   .home {
@@ -218,6 +217,9 @@ thead tr th {
     display: none;
   }
 
+  .copyright {
+    top: 84%;
+  }
 
   #mytable th {
     font-family: "Lato-Regular";
