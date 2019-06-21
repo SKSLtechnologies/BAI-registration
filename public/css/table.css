@@ -218,7 +218,8 @@ thead tr th {
   }
 
   .copyright {
-    top: 84%;
+    position: relative;
+    /* top: 84%; */
   }
 
   #mytable th {
