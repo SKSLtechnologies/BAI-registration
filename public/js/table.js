@@ -23,10 +23,11 @@ $(document).ready(function () {
     url = "/searched"
   }
 
-  $(".submit").click(function () {
-    console.log("Submit!")
-  })
+ 
 
+  $(".home").click(function () {
+    window.location.replace("/");
+  });
 
 
   var table = document.getElementById("myTable");
@@ -43,20 +44,20 @@ $(document).ready(function () {
     })
     .then(function (response) {
       var tr = "<thead><tr>";
-      var th1 = "<th style='padding:0 18px;'>#</th>";
+      var th1 = "<th class = 'hide-on-mobile'style='padding:0 18px;'>#</th>";
       var th2 = "<th style='padding:0 50px;'>Name</th>";
-      var th3 = "<th style='padding:0 35px;'>BAI Center</th>";
+      var th3 = "<th style='padding:0 35px;'>Center</th>";
       var th4 = "<th class = 'hide-on-mobile'style='padding:0 33px;'>Phone</th>"
       var th5 = "<th class = 'hide-on-mobile'style='padding:0 124px;'>Email</th></tr><thead><tbody>";
       $("#mytable").append(tr + th1 + th2 + th3 + th4 + th5);
       var a = 1;
       for (var i = 0; i < response.data.length; i++) {
 
-        var td1 = "<tr><td class=" + "tno>" + a + "</td>";
-        var td2 = "<td class=" + "tname>" + response.data[i]["name"] + "</td>";
-        var td3 = "<td class=" + "tplace>" + response.data[i]["city"] + "</td>";
-        var td4 = "<td class=" + "tphone hide-on-mobile>" + response.data[i]["office"] + "</td>";
-        var td5 = "<td  class=" + "temail hide-on-mobile>" + response.data[i]["email"] + "</td></tr>";
+        var td1 = "<tr><td class = 'tno hide-on-mobile'>" + a + "</td>";
+        var td2 = "<td class= 'tname'>" + response.data[i]["name"] + "</td>";
+        var td3 = "<td class= tplace>" + response.data[i]["city"] + "</td>";
+        var td4 = "<td class= 'tphone hide-on-mobile'>" + response.data[i]["office"] + "</td>";
+        var td5 = "<td  class= 'temail hide-on-mobile>'" + response.data[i]["email"] + "</td></tr>";
         $("#mytable").append(td1 + td2 + td3 + td4 + td5);
         a++;
       }
