@@ -108,7 +108,6 @@ exports.findAll = (req, res) => {
                 }
                 console.log("The file was saved!");
             });
-            console.log("Hello")
             res.json(members);
         }).catch(err => {
             res.status(500).send({
@@ -118,38 +117,25 @@ exports.findAll = (req, res) => {
 };
 
 exports.search = (req, res) => {
-    // if(!req.body) {
-    //     console.log("No entry");
-    // }
-    // else {
-        if (req.body.state && req.body.city) {
-            query = {
-                state: req.body.state,
-                city: req.body.city
+
+    var query = {};
+    for (var key in req.body) { //could also be req.query and req.params
+        req.body[key] !== "" ? query[key] = req.body[key] : null;
+    }
+
+
+    BAIinfo.find(query).then(function (data) {
+        var mySJON = JSON.stringify(data)
+        fs.writeFileSync("writeMe.json", mySJON, function (err) {
+            if (err) {
+                return console.log(err);
             }
-        } else if (req.body.state) {
-            query = {
-                state: req.body.state
-            }
-        } else {
-            query = {
-                city: req.body.city
-            }
-        }
-        BAIinfo.find(query).then(function (data) {
-            var mySJON = JSON.stringify(data)
-            fs.writeFileSync("writeMe.json", mySJON, function (err) {
-                if (err) {
-                    return console.log(err);
-                }
-                console.log("The file was saved!");
-            });
-            res.redirect('/list')
-        }).catch(function (err) {
-            res.status(500).send({
-                message: err.message || "Some error occurred while retrieving members."
-            });
+            console.log("The file was saved!");
         });
-    // }
-    
+        res.redirect('/list')
+    }).catch(function (err) {
+        res.status(500).send({
+            message: err.message || "Some error occurred while retrieving members."
+        });
+    });
 }
