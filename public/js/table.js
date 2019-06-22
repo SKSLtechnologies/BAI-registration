@@ -8,22 +8,21 @@ $(document).ready(function () {
 
   localStorage.setItem("on_load_counter", n);
 
-  nums = n.toString().split('').map(Number);
 
-   $(".filter").click(function () {
-    // alert("Hello!")
+  $(".filter").click(function () {
     window.location.replace("/filter");
   });
 
-
+  var no_heading = 0;
 
   if (n == 1) {
     var url = "/members"
   } else {
     url = "/searched"
+    no_heading = 8;
   }
 
- 
+
 
   $(".home").click(function () {
     window.location.replace("/");
@@ -43,13 +42,15 @@ $(document).ready(function () {
       }
     })
     .then(function (response) {
-      var tr = "<thead><tr>";
-      var th1 = "<th class = 'hide-on-mobile'style='padding:0 18px;'>#</th>";
-      var th2 = "<th style='padding:0 50px;'>Name</th>";
-      var th3 = "<th style='padding:0 35px;'>Center</th>";
-      var th4 = "<th class = 'hide-on-mobile'style='padding:0 33px;'>Phone</th>"
-      var th5 = "<th class = 'hide-on-mobile'style='padding:0 124px;'>Email</th></tr><thead><tbody>";
-      $("#mytable").append(tr + th1 + th2 + th3 + th4 + th5);
+      // if (no_heading == 0) {
+        var tr = "<thead><tr>";
+        var th1 = "<th class = 'hide-on-mobile no' >#</th>";
+        var th2 = "<th class = 'name'>Name</th>";
+        var th3 = "<th class= 'center' >Center</th>";
+        var th4 = "<th class = 'hide-on-mobile phone'>Phone</th>"
+        $("#mytable").append(tr + th1 + th2 + th3 + th4);
+      // }
+
       var a = 1;
       for (var i = 0; i < response.data.length; i++) {
 
@@ -57,8 +58,7 @@ $(document).ready(function () {
         var td2 = "<td class= 'tname'>" + response.data[i]["name"] + "</td>";
         var td3 = "<td class= tplace>" + response.data[i]["city"] + "</td>";
         var td4 = "<td class= 'tphone hide-on-mobile'>" + response.data[i]["office"] + "</td>";
-        var td5 = "<td  class= 'temail hide-on-mobile>'" + response.data[i]["email"] + "</td></tr>";
-        $("#mytable").append(td1 + td2 + td3 + td4 + td5);
+        $("#mytable").append(td1 + td2 + td3 + td4);
         a++;
       }
       var th6 = "</tbody>";

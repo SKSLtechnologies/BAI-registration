@@ -117,32 +117,38 @@ exports.findAll = (req, res) => {
 };
 
 exports.search = (req, res) => {
-    if (req.body.state && req.body.city) {
-        query = {
-            state: req.body.state,
-            city: req.body.city
-        }
-    } else if (req.body.state) {
-        query = {
-            state: req.body.state
-        }
-    } else {
-        query = {
-            city: req.body.city
-        }
-    }
-    BAIinfo.find(query).then(function (data) {
-        var mySJON = JSON.stringify(data)
-        fs.writeFileSync("writeMe.json", mySJON, function (err) {
-            if (err) {
-                return console.log(err);
+    // if(!req.body) {
+    //     console.log("No entry");
+    // }
+    // else {
+        if (req.body.state && req.body.city) {
+            query = {
+                state: req.body.state,
+                city: req.body.city
             }
-            console.log("The file was saved!");
+        } else if (req.body.state) {
+            query = {
+                state: req.body.state
+            }
+        } else {
+            query = {
+                city: req.body.city
+            }
+        }
+        BAIinfo.find(query).then(function (data) {
+            var mySJON = JSON.stringify(data)
+            fs.writeFileSync("writeMe.json", mySJON, function (err) {
+                if (err) {
+                    return console.log(err);
+                }
+                console.log("The file was saved!");
+            });
+            res.redirect('/list')
+        }).catch(function (err) {
+            res.status(500).send({
+                message: err.message || "Some error occurred while retrieving members."
+            });
         });
-        res.redirect('/list')
-    }).catch(function (err) {
-        res.status(500).send({
-            message: err.message || "Some error occurred while retrieving members."
-        });
-    });
+    // }
+    
 }
