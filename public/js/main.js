@@ -148,6 +148,7 @@ $(function () {
       "Uttarakhand": null,
       "West Bengal": null,
     },
+    limit: 5,
 
   });
 });

@@ -99,7 +99,7 @@ exports.create = (req, res) => {
 };
 
 exports.findAll = (req, res) => {
-    BAIinfo.find()
+    BAIinfo.find().sort('name')
         .then(members => {
             var mySJON = JSON.stringify(members)
             fs.writeFileSync("writeMe.json", mySJON, function (err) {
@@ -108,6 +108,7 @@ exports.findAll = (req, res) => {
                 }
                 console.log("The file was saved!");
             });
+            console.log("Hello")
             res.json(members);
         }).catch(err => {
             res.status(500).send({

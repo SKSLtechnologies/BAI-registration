@@ -18,7 +18,6 @@ var url;
     url = "/members"
   } else {
     url = "/searched"
-    no_heading = 8;
   }
 
 
