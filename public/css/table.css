@@ -228,7 +228,7 @@ and (orientation : landscape) {
     width: 140px;
   }
 }
-
+/* 
 @media (max-width: 375px) {
   .tname {
     width: 112px;
@@ -237,7 +237,7 @@ and (orientation : landscape) {
   .tplace {
     width: 168px;
   }
-}
+} */
 @media only screen 
     and (device-width : 375px) 
     and (device-height : 812px) 
