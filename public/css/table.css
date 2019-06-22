@@ -238,6 +238,20 @@ and (orientation : landscape) {
     width: 168px;
   }
 }
+@media only screen 
+    and (device-width : 375px) 
+    and (device-height : 812px) 
+    and (-webkit-device-pixel-ratio : 3)
+    and (orientation : portrait)  { 
+      .tname {
+        width: 90px;
+      }
+      
+      .tplace {
+        width: 175px;
+      }
+    }
+
 @media (max-width: 420px) {
   .tname {
     width: 100px;
