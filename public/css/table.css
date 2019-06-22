@@ -50,7 +50,7 @@ body {
   padding: 20px 30px;
   box-sizing: border-box;
   width: 58%;
-  margin: 0 10% 5% 20%;
+  margin: 2% 10% 5% 20%;
   height: 600px;
 }
 
@@ -162,17 +162,22 @@ thead tr th {
 }
 
 .home {
-  margin-left: 10px;
-  position: relative;
+  position: absolute;
   background: rgb(255, 196, 0);
+  right: 10%;
 }
 
 .filter {
-  margin-left: -1px;
-  position: relative;
+  position: absolute;
   background: rgb(255, 196, 0);
+  right: 20%;
 }
-
+.showAll {
+  position: absolute;
+  background: rgb(255, 196, 0);
+  /* width: 150px; */
+  right: 30%;
+}
 
 .action-button:hover,
 .action-button:focus {
@@ -228,16 +233,7 @@ and (orientation : landscape) {
     width: 140px;
   }
 }
-/* 
-@media (max-width: 375px) {
-  .tname {
-    width: 112px;
-  }
-  
-  .tplace {
-    width: 168px;
-  }
-} */
+
 @media only screen 
     and (device-width : 375px) 
     and (device-height : 812px) 
@@ -249,6 +245,16 @@ and (orientation : landscape) {
       
       .tplace {
         width: 175px;
+      }
+      .home {
+        right: 10%;
+      }
+      .filter {
+        width: 102px;
+        right: 36%;
+      }
+      .showAll {
+        right: 63%;
       }
     }
 
@@ -282,22 +288,18 @@ and (orientation : landscape) {
 		height: auto;
   }
 
-  .home {
-    margin-left: 1px;
+  /* .home {
     right: 10%;
-    position: relative;
-    background: rgb(255, 196, 0);
   }
   
   .filter {
     margin-left: 0px;
     position: relative;
     right: 10%;
-    background: rgb(255, 196, 0);
-  }
+  } */
   #div1 {
     width: 80%;
-    margin-left: 10%;
+    margin: 0 0  0 10%;
     padding: 5px;
   }
 

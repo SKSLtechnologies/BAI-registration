@@ -13,10 +13,9 @@ $(document).ready(function () {
     window.location.replace("/filter");
   });
 
-  var no_heading = 0;
-
+var url; 
   if (n == 1) {
-    var url = "/members"
+    url = "/members"
   } else {
     url = "/searched"
     no_heading = 8;
@@ -26,6 +25,11 @@ $(document).ready(function () {
 
   $(".home").click(function () {
     window.location.replace("/");
+  });
+
+  $(".showAll").click(function () {
+    localStorage.setItem("on_load_counter", 0)
+    window.location.replace("/list");
   });
 
 
@@ -42,14 +46,12 @@ $(document).ready(function () {
       }
     })
     .then(function (response) {
-      // if (no_heading == 0) {
         var tr = "<thead><tr>";
         var th1 = "<th class = 'hide-on-mobile no' >#</th>";
         var th2 = "<th class = 'name'>Name</th>";
         var th3 = "<th class= 'center' >Center</th>";
         var th4 = "<th class = 'hide-on-mobile phone'>Phone</th>"
         $("#mytable").append(tr + th1 + th2 + th3 + th4);
-      // }
 
       var a = 1;
       for (var i = 0; i < response.data.length; i++) {
