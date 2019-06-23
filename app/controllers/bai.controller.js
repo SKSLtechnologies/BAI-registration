@@ -121,21 +121,49 @@ exports.search = (req, res) => {
     var query = {};
     for (var key in req.body) { //could also be req.query and req.params
         req.body[key] !== "" ? query[key] = req.body[key] : null;
+        console.log(key)
     }
 
+    console.log(req.body.largest_contract)
+    if (req.body.largest_contract) {
+        if (req.body.largest_contract == 100000 ) {
+            query["largest_contract"] = { $lte: 100000 };
+        }
+        else if (req.body.largest_contract == 500000) {
+            query["largest_contract"] = { $lte: 500000, $gte: 100000 };
+        }
+        else if (req.body.largest_contract == 1000000) {
+            query["largest_contract"] = { $lte: 1000000, $gte: 500000 };
 
-    BAIinfo.find(query).then(function (data) {
-        var mySJON = JSON.stringify(data)
-        fs.writeFileSync("writeMe.json", mySJON, function (err) {
-            if (err) {
-                return console.log(err);
-            }
-            console.log("The file was saved!");
+        }
+        else if (req.body.largest_contract == 10000000) {
+            query["largest_contract"] = { $lte: 10000000, $gte: 1000000 };
+            
+        }
+        else if (req.body.largest_contract == 50000000) {
+            query["largest_contract"] = { $lte: 50000000, $gte: 10000000 };
+            
+        }
+        else  {
+            query["largest_contract"] = { $gte: 50000000 };
+            
+        }
+    }
+    console.log(query);
+
+    BAIinfo.find(query).sort('name')
+        .then(function (data) {
+            var mySJON = JSON.stringify(data)
+            fs.writeFileSync("writeMe.json", mySJON, function (err) {
+                if (err) {
+                    return console.log(err);
+                }
+                console.log("The file was saved!");
+            });
+            res.redirect('/list')
+        }).catch(function (err) {
+            res.status(500).send({
+                message: err.message || "Some error occurred while retrieving members."
+            });
         });
-        res.redirect('/list')
-    }).catch(function (err) {
-        res.status(500).send({
-            message: err.message || "Some error occurred while retrieving members."
-        });
-    });
 }

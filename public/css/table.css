@@ -232,6 +232,14 @@ and (orientation : landscape) {
   .tplace {
     width: 140px;
   }
+
+  .filter {
+    width: 102px;
+    right: 32%;
+  }
+  .showAll {
+    right: 58%;
+  }
 }
 
 @media only screen 
@@ -266,6 +274,7 @@ and (orientation : landscape) {
   .tplace {
     width: 188px;
   }
+
 }
 
 @media (max-width: 670px) {
@@ -276,6 +285,8 @@ and (orientation : landscape) {
   .tplace {
     width: 314px;
   }
+  
+
 }
 
 
@@ -313,5 +324,14 @@ and (orientation : landscape) {
     padding: 10px 0px 10px 5px;
     height: 14px;
   }
+
+  .filter {
+    width: 102px;
+    right: 30%;
+  }
+  .showAll {
+    right: 50%;
+  }
+  
 
 }

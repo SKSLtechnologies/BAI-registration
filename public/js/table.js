@@ -13,7 +13,7 @@ $(document).ready(function () {
     window.location.replace("/filter");
   });
 
-var url; 
+  var url;
   if (n == 1) {
     url = "/members"
   } else {
@@ -45,20 +45,27 @@ var url;
       }
     })
     .then(function (response) {
-        var tr = "<thead><tr>";
-        var th1 = "<th class = 'hide-on-mobile no' >#</th>";
-        var th2 = "<th class = 'name'>Name</th>";
-        var th3 = "<th class= 'center' >Center</th>";
-        var th4 = "<th class = 'hide-on-mobile phone'>Phone</th>"
-        $("#mytable").append(tr + th1 + th2 + th3 + th4);
-
+      if (response.data.length == 0) {
+        alert ("No results found! Redirecting to home")
+        window.location.replace("/");
+      }
+      var tr = "<thead><tr>";
+      var th1 = "<th class = 'hide-on-mobile no' >#</th>";
+      var th2 = "<th class = 'name'>Name</th>";
+      var th3 = "<th class= 'center' >Center</th>";
+      var th4 = "<th class = 'hide-on-mobile phone'>Phone</th></tr><thead><tbody>"
+      $("#mytable").append(tr + th1 + th2 + th3 + th4);
+      // alert(response.data.length)
+      // if (response.data.length == 0) {
+      //   alert ("No results found!")
+      // }
       var a = 1;
       for (var i = 0; i < response.data.length; i++) {
 
         var td1 = "<tr><td class = 'tno hide-on-mobile'>" + a + "</td>";
         var td2 = "<td class= 'tname'>" + response.data[i]["name"] + "</td>";
         var td3 = "<td class= tplace>" + response.data[i]["city"] + "</td>";
-        var td4 = "<td class= 'tphone hide-on-mobile'>" + response.data[i]["office"] + "</td>";
+        var td4 = "<td class= 'tphone hide-on-mobile'>" + response.data[i]["office"] + "</td></tr>";
         $("#mytable").append(td1 + td2 + td3 + td4);
         a++;
       }
