@@ -44,7 +44,16 @@ exports.create = (req, res) => {
         //find the total number of documents
         await BAIinfo.countDocuments({}, function (err, count) {
             registeration_no = count.toString();
-            switch (5 - registeration_no.length) {
+            switch (8 - registeration_no.length) {
+                case 7:
+                    registeration_no = '0000000' + registeration_no;
+                    break;
+                case 6:
+                    registeration_no = '000000' + registeration_no;
+                    break;
+                case 5:
+                    registeration_no = '00000' + registeration_no;
+                    break;
                 case 4:
                     registeration_no = '0000' + registeration_no;
                     break;
@@ -56,6 +65,9 @@ exports.create = (req, res) => {
                     break;
                 case 1:
                     registeration_no = '0' + registeration_no;
+                    break;
+                default: 
+                registeration_no = registeration_no;
             }
         });
 
