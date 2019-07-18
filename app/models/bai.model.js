@@ -6,6 +6,9 @@ const BAIinfo = mongoose.Schema({
         type: String,
         // required: [true, "can't be blank"],
     },
+    registration_number: {
+        type: String,
+    },
     org_name: {
         type: String,
     },

@@ -10,37 +10,9 @@ exports.create = (req, res) => {
             message: "member can not be empty"
         });
     }
-
-    // Create a member
-    const info = new BAIinfo({
-        name: req.body.name,
-        org_name: req.body.org_name,
-        email: req.body.email,
-        address: req.body.address,
-        city: req.body.city,
-        state: req.body.state,
-        pin: req.body.pin,
-        phone: req.body.phone || "N/A",
-        office: req.body.office,
-        md_name: req.body.md_name || "N/A",
-        partner_name: req.body.partner_name || "N/A",
-        director_name: req.body.director_name || "N/A",
-        equipments: req.body.equipments,
-        org_type: req.body.org_type || "N/A",
-        member: req.body.member,
-        website: req.body.website || "N/A",
-        clients: req.body.clients,
-        contract_type: req.body.contract_type || "N/A",
-        largest_contract: req.body.largest_contract,
-        one_year: req.body.one_year || 0,
-        two_year: req.body.two_year || 0,
-        three_year: req.body.three_year || 0,
-        work_nature: req.body.work_nature,
-        credentials: req.body.credentials || "N/A"
-    });
-
+    var registeration_no;
     async function trying() {
-        var registeration_no;
+
         //find the total number of documents
         await BAIinfo.countDocuments({}, function (err, count) {
             registeration_no = count.toString();
@@ -66,8 +38,8 @@ exports.create = (req, res) => {
                 case 1:
                     registeration_no = '0' + registeration_no;
                     break;
-                default: 
-                registeration_no = registeration_no;
+                default:
+                    registeration_no = registeration_no;
             }
         });
 
@@ -95,19 +67,56 @@ exports.create = (req, res) => {
             }
             console.log('Message %s sent: %s', info.messageId, info.response);
         });
+
+        console.log(registeration_no);
+        // Create a member
+        const info = new BAIinfo({
+            name: req.body.name,
+            registration_number: registeration_no,
+            org_name: req.body.org_name,
+            email: req.body.email,
+            address: req.body.address,
+            city: req.body.city,
+            state: req.body.state,
+            pin: req.body.pin,
+            phone: req.body.phone || "N/A",
+            office: req.body.office,
+            md_name: req.body.md_name || "N/A",
+            partner_name: req.body.partner_name || "N/A",
+            director_name: req.body.director_name || "N/A",
+            equipments: req.body.equipments,
+            org_type: req.body.org_type || "N/A",
+            member: req.body.member,
+            website: req.body.website || "N/A",
+            clients: req.body.clients,
+            contract_type: req.body.contract_type || "N/A",
+            largest_contract: req.body.largest_contract,
+            one_year: req.body.one_year || 0,
+            two_year: req.body.two_year || 0,
+            three_year: req.body.three_year || 0,
+            work_nature: req.body.work_nature,
+            credentials: req.body.credentials || "N/A"
+        });
+
+        // Save member in the database
+        info.save()
+            .then(data => {
+                res.redirect('/success')
+            }).catch(err => {
+                res.status(500).send({
+                    message: err.message || "Some error occurred while creating the member."
+                });
+            });
     }
 
     trying();
 
-    // Save member in the database
-    info.save()
-        .then(data => {
-            res.redirect('/success')
-        }).catch(err => {
-            res.status(500).send({
-                message: err.message || "Some error occurred while creating the member."
-            });
-        });
+
+
+
+
+
+
 };
 
 exports.findAll = (req, res) => {
@@ -138,27 +147,38 @@ exports.search = (req, res) => {
 
     console.log(req.body.largest_contract)
     if (req.body.largest_contract) {
-        if (req.body.largest_contract == 100000 ) {
-            query["largest_contract"] = { $lte: 100000 };
-        }
-        else if (req.body.largest_contract == 500000) {
-            query["largest_contract"] = { $lte: 500000, $gte: 100000 };
-        }
-        else if (req.body.largest_contract == 1000000) {
-            query["largest_contract"] = { $lte: 1000000, $gte: 500000 };
+        if (req.body.largest_contract == 100000) {
+            query["largest_contract"] = {
+                $lte: 100000
+            };
+        } else if (req.body.largest_contract == 500000) {
+            query["largest_contract"] = {
+                $lte: 500000,
+                $gte: 100000
+            };
+        } else if (req.body.largest_contract == 1000000) {
+            query["largest_contract"] = {
+                $lte: 1000000,
+                $gte: 500000
+            };
 
-        }
-        else if (req.body.largest_contract == 10000000) {
-            query["largest_contract"] = { $lte: 10000000, $gte: 1000000 };
-            
-        }
-        else if (req.body.largest_contract == 50000000) {
-            query["largest_contract"] = { $lte: 50000000, $gte: 10000000 };
-            
-        }
-        else  {
-            query["largest_contract"] = { $gte: 50000000 };
-            
+        } else if (req.body.largest_contract == 10000000) {
+            query["largest_contract"] = {
+                $lte: 10000000,
+                $gte: 1000000
+            };
+
+        } else if (req.body.largest_contract == 50000000) {
+            query["largest_contract"] = {
+                $lte: 50000000,
+                $gte: 10000000
+            };
+
+        } else {
+            query["largest_contract"] = {
+                $gte: 50000000
+            };
+
         }
     }
     console.log(query);
